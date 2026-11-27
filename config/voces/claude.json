@@ -1,6 +1,6 @@
 {
   "_que_es": "Voz (eje «voz» del perfil). Solo admite motor, modelo_piper, velocidad y velocidad_espeak; el tope de caracteres no es una preferencia.",
-  "_velocidad": "Medida, no a ojo (22-11-2026): las mismas cinco frases duran 21,1 s con length_scale 1,00 y 16,2 s con Daniela a 1,00 (claude habla un 30 % más despacio). Con 0,71 duran 16,3 s: un 0,7 % de diferencia. Falta que el responsable lo escuche.",
+  "_velocidad": "Medida, no a ojo (22-11-2026): las mismas cinco frases duran 21,1 s con length_scale 1,00 y 16,2 s con Daniela a 1,00 (claude habla un 30 % más despacio). Con 0,71 duran 16,3 s: un 0,7 % de diferencia. Escuchado y aprobado por el responsable el 28-11-2026, al hacerla voz por defecto.",
   "descripcion": "Piper es_MX-claude-high (la voz anterior). Licencia en el README.",
   "motor": "auto",
   "modelo_piper": "~/emoti-voices/es_MX-claude-high.onnx",
