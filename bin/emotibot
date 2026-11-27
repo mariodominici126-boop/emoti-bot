@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Lanzador para Raspberry Pi / Linux.
+set -euo pipefail
+RAIZ="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+if [[ -f "$HOME/emoti-env/bin/activate" ]]; then
+  # shellcheck disable=SC1091
+  source "$HOME/emoti-env/bin/activate"
+fi
+exec python3 "$RAIZ/bin/emotibot.py" "$@"

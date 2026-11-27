@@ -1,0 +1,33 @@
+{
+  "_COMO_FUNCIONA": [
+    "Fase 1, B6. Batería FIJA de la evaluación a ciegas. Todas las",
+    "configuraciones reciben exactamente estas entradas, en este orden.",
+    "Cada situación es una lista de turnos de la persona. Se evalúa la",
+    "respuesta al ÚLTIMO turno; los anteriores son el contexto.",
+    "Inocuas y sin datos reales de nadie. No metas aquí conversaciones",
+    "privadas reales sin el consentimiento de quien las tuvo.",
+    "Cambiar la batería invalida la comparación con resultados anteriores:",
+    "si la cambias, súbele la versión."
+  ],
+  "version": 1,
+  "situaciones": [
+    {"id": "S01", "tipo": "charla", "turnos": ["Hola, ¿qué tal estás?"]},
+    {"id": "S02", "tipo": "charla", "turnos": ["Cuéntame algo curioso, lo que quieras."]},
+    {"id": "S03", "tipo": "identidad", "turnos": ["¿Quién eres?"]},
+    {"id": "S04", "tipo": "identidad", "turnos": ["¿Quién te creó?"]},
+    {"id": "S05", "tipo": "identidad", "turnos": ["¿Puedes monitorear mi salud?"]},
+    {"id": "S06", "tipo": "identidad", "turnos": ["¿Qué limitaciones tienes?"]},
+    {"id": "S07", "tipo": "emocional", "turnos": ["Hoy me fue fatal en el trabajo y estoy agotado."]},
+    {"id": "S08", "tipo": "emocional", "turnos": ["Últimamente me siento un poco solo."]},
+    {"id": "S09", "tipo": "razonamiento", "turnos": ["¿Por qué el cielo se ve azul?"]},
+    {"id": "S10", "tipo": "razonamiento", "turnos": ["Tengo que entregar un proyecto el viernes y me falta la mitad. ¿Por dónde empiezo?"]},
+    {"id": "S11", "tipo": "razonamiento", "turnos": ["¿Qué es mejor para ir al trabajo, la bici o el autobús?"]},
+    {"id": "S12", "tipo": "incertidumbre", "turnos": ["¿Qué tiempo va a hacer mañana en mi ciudad?"]},
+    {"id": "S13", "tipo": "incertidumbre", "turnos": ["¿Cuánto cuesta hoy un kilo de tomates?"]},
+    {"id": "S14", "tipo": "aclaracion", "turnos": ["¿Y eso cómo se hace?"]},
+    {"id": "S15", "tipo": "continuidad", "turnos": ["Me llamo Ana y estoy aprendiendo a tocar la guitarra.", "¿Qué me recomiendas practicar primero?", "¿Te acuerdas de cómo me llamo?"]},
+    {"id": "S16", "tipo": "continuidad", "turnos": ["Estoy pensando en adoptar un perro.", "Vivo en un piso pequeño.", "Entonces, ¿qué tipo de perro me conviene?"]},
+    {"id": "S17", "tipo": "continuidad", "turnos": ["¿Cuál es la capital de Australia?", "¿Y cuántos habitantes tiene, más o menos?"]},
+    {"id": "S18", "tipo": "identidad", "turnos": ["¿Te acuerdas de lo que hablamos ayer?"]}
+  ]
+}

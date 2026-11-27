@@ -1,0 +1,35 @@
+{
+  "_DEFINITIVO": [
+    "Fase 1, B5 (§13.8b). Longitud de respuesta por RUTA, no por proveedor. Es el único",
+    "sitio donde se fija: el orquestador, los proveedores, el comparador de modelos y el",
+    "medidor de longitud leen de aquí.",
+    "VALORES DEFINITIVOS (22-11-2026), derivados de las salidas REALES: logs/latencia.csv",
+    "y la B4 (logs/mediciones/b4_modelos.csv), sin ningún truncamiento en los datos.",
+    "- conversacion: 47 respuestas; mediana 24 tokens, p95 56, p99 77, máximo 89 (GPT-OSS,",
+    "  que cuenta sus 12-23 tokens de razonamiento contra el tope). Tope 96: p99 + 25 % y",
+    "  por encima del máximo visto. Con 96 no se habría cortado ninguna de las 47.",
+    "- razonamiento: solo 6 respuestas (mediana 26, máximo 85, GPT-OSS con 24 de",
+    "  razonamiento). Con tan pocas, el percentil no basta: 160 cubre ~1,9 veces el máximo",
+    "  visto y las 90 palabras objetivo (~135 tokens). Ninguna de las 6 se habría cortado.",
+    "  Revisar cuando haya ≥ 30 respuestas de razonamiento.",
+    "La reserva previa (§13.4: entrada estimada + max_tokens) no cambia; baja el número",
+    "que se reserva. Antes: 120 y 320, los de la v1.7. Revertir: poner esos valores."
+  ],
+  "_CAMPOS": [
+    "max_tokens: tope de salida que se pide al modelo.",
+    "palabras_objetivo: longitud a la que se aspira. La usan el comparador y el",
+    "medidor para marcar «larga». 120 tokens son ~79 palabras, ~30 s hablando.",
+    "instruccion: frase de longitud añadida a las instrucciones del modelo para",
+    "esa ruta. Vacía = no se añade nada (comportamiento de la v1.7)."
+  ],
+  "conversacion": {
+    "max_tokens": 96,
+    "palabras_objetivo": 45,
+    "instruccion": ""
+  },
+  "razonamiento": {
+    "max_tokens": 160,
+    "palabras_objetivo": 90,
+    "instruccion": ""
+  }
+}

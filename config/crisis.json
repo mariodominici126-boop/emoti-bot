@@ -1,0 +1,49 @@
+{
+  "_INSTRUCCIONES_PARA_MARIO": [
+    "Este archivo NO lo usa ningún modelo de IA. Lo lee el código directamente.",
+    "Los números viven SOLO aquí. Ningún modelo los genera, los completa ni los corrige.",
+    "La respuesta de crisis se pronuncia tal cual, sin pasar por ningún modelo.",
+    "Funciona sin Internet y sin cuota. Es la única ruta garantizada del sistema.",
+    "Estos números son de República Dominicana. Si region.pais en config/ajustes.json es otro país, no se ofrecen.",
+    "Cada línea lleva su horario ('24h' o '08:00-24:00', hora del país). Fuera de horario nunca se ofrece como principal.",
+    "No añadas números sustituidos ni 'por si acaso': un número muerto es peor que ninguno.",
+    "No añadas descripciones de métodos ni detalles de riesgo en este archivo."
+  ],
+  "verificado_por_responsable": false,
+  "_verificacion": "DOCUMENTAL, no telefónica, 22-11-2026: 711 según tres fuentes de octubre de 2026 que citan al Ministerio de Salud Pública; *212 según la página del Ministerio de la Mujer; 911 sistema nacional de emergencias. NADIE HA MARCADO LOS NÚMEROS. Comprobarlos por teléfono es lo que falta para poner verificado_por_responsable en true, y le toca al responsable.",
+  "pais": "República Dominicana",
+  "desfase_utc_horas": -4,
+  "lineas": [
+    {
+      "uso": "peligro",
+      "etiqueta": "peligro ahora mismo",
+      "numero": "911",
+      "se_dice": "nueve uno uno",
+      "horario": "24h",
+      "idiomas": "",
+      "nombre_en_frase": "emergencias"
+    },
+    {
+      "uso": "crisis_emocional",
+      "etiqueta": "crisis emocional",
+      "numero": "711",
+      "se_dice": "siete uno uno",
+      "horario": "08:00-24:00",
+      "idiomas": "",
+      "nombre_en_frase": "la línea de crisis emocional"
+    },
+    {
+      "uso": "violencia_mujer",
+      "etiqueta": "violencia hacia la mujer",
+      "numero": "*212",
+      "se_dice": "asterisco dos uno dos",
+      "horario": "24h",
+      "idiomas": "español y criollo",
+      "nombre_en_frase": "la línea de violencia hacia la mujer"
+    }
+  ],
+  "respuesta": "Gracias por decírmelo. Lo que me cuentas es importante y es más grande de lo que yo puedo acompañar: soy un programa, no una persona ni un profesional. No quiero dejarte solo con esto. Busca ahora mismo a alguien de confianza que esté cerca de ti y cuéntaselo, aunque cueste.",
+  "cierre_con_emergencias": "Si estás en peligro en este momento, llama al {emergencias}. Si prefieres, pide a esa persona de confianza que llame contigo.",
+  "cierre_con_linea": "También puedes hablar con {nombre_linea} en el {linea}.",
+  "cierre_sin_recursos": "Si estás en peligro en este momento, llama a los servicios de emergencia de tu país o pide a alguien cercano que lo haga contigo."
+}

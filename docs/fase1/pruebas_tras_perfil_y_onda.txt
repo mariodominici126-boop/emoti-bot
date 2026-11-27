@@ -1,0 +1,362 @@
+test_avisa_del_primer_sonido_y_escribe_todo (tests.test_cadena.CadenaTest.test_avisa_del_primer_sonido_y_escribe_todo) ... ok
+test_cancelar_cierra_el_microfono (tests.test_cadena.CadenaTest.test_cancelar_cierra_el_microfono) ... ok
+test_cerrar_libera_el_dispositivo (tests.test_cadena.CadenaTest.test_cerrar_libera_el_dispositivo) ... ok
+test_detecta_voz_y_recorta_a_la_parte_util (tests.test_cadena.CadenaTest.test_detecta_voz_y_recorta_a_la_parte_util) ... ok
+test_interrumpir_vacia_el_buffer (tests.test_cadena.CadenaTest.test_interrumpir_vacia_el_buffer)
+Sin vaciar, el robot seguiría sonando tras pedirle que pare. ... ok
+test_el_candidato_anade_su_esfuerzo_de_razonamiento (tests.test_candidato_gpt_oss.CuerpoTest.test_el_candidato_anade_su_esfuerzo_de_razonamiento) ... ok
+test_el_proveedor_envia_los_parametros (tests.test_candidato_gpt_oss.CuerpoTest.test_el_proveedor_envia_los_parametros) ... ok
+test_la_configuracion_no_puede_pisar_los_campos_del_robot (tests.test_candidato_gpt_oss.CuerpoTest.test_la_configuracion_no_puede_pisar_los_campos_del_robot)
+El tope de tokens es contabilidad (A3) y techo (§14.5). ... ok
+test_produccion_envia_exactamente_lo_mismo_que_antes (tests.test_candidato_gpt_oss.CuerpoTest.test_produccion_envia_exactamente_lo_mismo_que_antes) ... ok
+test_el_modelo_de_conversacion_sigue_siendo_qwen (tests.test_candidato_gpt_oss.FueraDeProduccionTest.test_el_modelo_de_conversacion_sigue_siendo_qwen) ... ok
+test_esta_configurado_como_candidato (tests.test_candidato_gpt_oss.FueraDeProduccionTest.test_esta_configurado_como_candidato) ... ok
+test_no_esta_en_el_orden_de_produccion (tests.test_candidato_gpt_oss.FueraDeProduccionTest.test_no_esta_en_el_orden_de_produccion) ... ok
+test_lee_razonamiento_y_cache_tambien_en_x_groq (tests.test_candidato_gpt_oss.MedicionTest.test_lee_razonamiento_y_cache_tambien_en_x_groq) ... ok
+test_los_topes_se_suman_por_anfitrion (tests.test_candidato_gpt_oss.MedicionTest.test_los_topes_se_suman_por_anfitrion)
+Qwen y GPT-OSS van los dos a Groq: 10 + 11 supera los 20. ... ok
+test_plan_por_defecto_compara_qwen_con_gpt_oss (tests.test_candidato_gpt_oss.MedicionTest.test_plan_por_defecto_compara_qwen_con_gpt_oss)
+Desde el 22-11 (opción d) ya no incluye la ruta de OpenRouter. ... ok
+test_sin_detalles_quedan_vacios (tests.test_candidato_gpt_oss.MedicionTest.test_sin_detalles_quedan_vacios) ... ok
+test_tok_s_cuenta_desde_el_primer_fragmento (tests.test_candidato_gpt_oss.MedicionTest.test_tok_s_cuenta_desde_el_primer_fragmento)
+El razonamiento llega antes del TTFT y también es salida. ... ok
+test_tok_s_no_divide_por_casi_cero (tests.test_candidato_gpt_oss.MedicionTest.test_tok_s_no_divide_por_casi_cero)
+Regresión: se llegaron a mostrar 44.557 tok/s. ... ok
+test_tok_s_sin_datos (tests.test_candidato_gpt_oss.MedicionTest.test_tok_s_sin_datos) ... ok
+test_fijar_estado_emocional_conserva_el_funcional (tests.test_composicion.CaraDosEjesTest.test_fijar_estado_emocional_conserva_el_funcional) ... ok
+test_fijar_estado_funcional_fija_ambos_ejes (tests.test_composicion.CaraDosEjesTest.test_fijar_estado_funcional_fija_ambos_ejes) ... ok
+test_la_boca_no_salta_al_empezar_a_sonar (tests.test_composicion.CaraDosEjesTest.test_la_boca_no_salta_al_empezar_a_sonar) ... ok
+test_transicion_suave_entre_expresiones (tests.test_composicion.CaraDosEjesTest.test_transicion_suave_entre_expresiones)
+Un fotograma de 33 ms no puede llevar la cara entera a su destino. ... ok
+test_etiqueta_funcional_si_la_expresion_es_un_estado (tests.test_composicion.ComposicionTest.test_etiqueta_funcional_si_la_expresion_es_un_estado)
+Pronunciar una pregunta con cara de escucha no dice «TE ESCUCHO». ... ok
+test_fuera_de_hablando_no_hay_amplitud_de_boca (tests.test_composicion.ComposicionTest.test_fuera_de_hablando_no_hay_amplitud_de_boca) ... ok
+test_hablando_abre_la_boca_con_cualquier_expresion (tests.test_composicion.ComposicionTest.test_hablando_abre_la_boca_con_cualquier_expresion) ... ok
+test_la_expresion_conserva_ojos_cejas_e_inclinacion (tests.test_composicion.ComposicionTest.test_la_expresion_conserva_ojos_cejas_e_inclinacion) ... ok
+test_solo_escuchar_de_verdad_enciende_el_indicador (tests.test_composicion.ComposicionTest.test_solo_escuchar_de_verdad_enciende_el_indicador) ... ok
+test_hablando_no_enciende_la_onda_de_escucha (tests.test_composicion.DiecisieteSitiosTest.test_hablando_no_enciende_la_onda_de_escucha)
+ordenar_ideas pronunciaba sus preguntas con el piloto encendido. ... ok
+test_la_boca_sigue_la_voz_en_cada_sitio (tests.test_composicion.DiecisieteSitiosTest.test_la_boca_sigue_la_voz_en_cada_sitio) ... ok
+test_la_ruta_de_seguridad_sigue_aislada (tests.test_composicion.DiecisieteSitiosTest.test_la_ruta_de_seguridad_sigue_aislada) ... ok
+test_son_diecisiete_y_coinciden_con_el_codigo (tests.test_composicion.DiecisieteSitiosTest.test_son_diecisiete_y_coinciden_con_el_codigo) ... ok
+test_todos_tienen_texto_que_pronunciar (tests.test_composicion.DiecisieteSitiosTest.test_todos_tienen_texto_que_pronunciar) ... ok
+test_cabecera_propia_por_defecto (tests.test_diagnostico_ia.AgenteUsuarioTest.test_cabecera_propia_por_defecto) ... ok
+test_el_sondeo_local_tambien_se_identifica (tests.test_diagnostico_ia.AgenteUsuarioTest.test_el_sondeo_local_tambien_se_identifica) ... ok
+test_la_configuracion_no_puede_quitar_la_clave (tests.test_diagnostico_ia.AgenteUsuarioTest.test_la_configuracion_no_puede_quitar_la_clave) ... ok
+test_la_de_configuracion_manda_sin_duplicar (tests.test_diagnostico_ia.AgenteUsuarioTest.test_la_de_configuracion_manda_sin_duplicar) ... ok
+test_la_medicion_b4_usa_las_mismas_cabeceras (tests.test_diagnostico_ia.AgenteUsuarioTest.test_la_medicion_b4_usa_las_mismas_cabeceras) ... ok
+test_la_peticion_real_no_se_presenta_como_python_urllib (tests.test_diagnostico_ia.AgenteUsuarioTest.test_la_peticion_real_no_se_presenta_como_python_urllib) ... ok
+test_ya_no_hace_falta_el_parche_en_la_configuracion (tests.test_diagnostico_ia.AgenteUsuarioTest.test_ya_no_hace_falta_el_parche_en_la_configuracion) ... ok
+test_el_403_de_cloudflare_no_dice_que_la_clave_esta_mal (tests.test_diagnostico_ia.ClasificacionTest.test_el_403_de_cloudflare_no_dice_que_la_clave_esta_mal) ... ok
+test_gemini_distingue_el_borde (tests.test_diagnostico_ia.ClasificacionTest.test_gemini_distingue_el_borde) ... ok
+test_la_medicion_b4_clasifica_igual (tests.test_diagnostico_ia.ClasificacionTest.test_la_medicion_b4_clasifica_igual) ... ok
+test_tabla (tests.test_diagnostico_ia.ClasificacionTest.test_tabla) ... ok
+test_el_diagnostico_de_gemini_ya_no_lanza_typeerror (tests.test_diagnostico_ia.FirmaGeminiTest.test_el_diagnostico_de_gemini_ya_no_lanza_typeerror) ... ok
+test_produccion_pide_la_clave_por_nombre (tests.test_diagnostico_ia.FirmaGeminiTest.test_produccion_pide_la_clave_por_nombre)
+El orquestador de la aplicación construye «remoto» con la firma buena. ... ok
+test_el_diagnostico_no_lo_imprime (tests.test_diagnostico_ia.IdentificadoresTest.test_el_diagnostico_no_lo_imprime) ... ok
+test_el_filtro_del_registro_tambien_redacta (tests.test_diagnostico_ia.IdentificadoresTest.test_el_filtro_del_registro_tambien_redacta) ... ok
+test_ni_el_error_ni_el_registro_llevan_el_identificador (tests.test_diagnostico_ia.IdentificadoresTest.test_ni_el_error_ni_el_registro_llevan_el_identificador) ... ok
+test_no_toca_modelos_ni_cifras (tests.test_diagnostico_ia.IdentificadoresTest.test_no_toca_modelos_ni_cifras) ... ok
+test_redacta_el_valor_y_conserva_el_mensaje (tests.test_diagnostico_ia.IdentificadoresTest.test_redacta_el_valor_y_conserva_el_mensaje) ... ok
+test_variantes_de_campo_y_sueltos (tests.test_diagnostico_ia.IdentificadoresTest.test_variantes_de_campo_y_sueltos) ... ok
+test_conversacion_si_llega_al_modelo_y_se_recuerda (tests.test_dialogo.GestorTest.test_conversacion_si_llega_al_modelo_y_se_recuerda) ... ok
+test_detener_cancela_la_actividad (tests.test_dialogo.GestorTest.test_detener_cancela_la_actividad) ... ok
+test_identidad_la_contesta_el_proveedor (tests.test_dialogo.GestorTest.test_identidad_la_contesta_el_proveedor)
+La identidad va en las instrucciones, no en un texto fijo. ... ok
+test_memoria_acotada (tests.test_dialogo.GestorTest.test_memoria_acotada) ... ok
+test_ordenar_ideas_recorre_tres_preguntas (tests.test_dialogo.GestorTest.test_ordenar_ideas_recorre_tres_preguntas) ... ok
+test_respiracion_arranca_como_actividad_local (tests.test_dialogo.GestorTest.test_respiracion_arranca_como_actividad_local) ... ok
+test_seguridad_no_entra_en_la_memoria (tests.test_dialogo.GestorTest.test_seguridad_no_entra_en_la_memoria) ... ok
+test_seguridad_va_primero_y_no_llama_al_modelo (tests.test_dialogo.GestorTest.test_seguridad_va_primero_y_no_llama_al_modelo) ... ok
+test_sin_proveedor_el_guion_da_el_fragmento (tests.test_dialogo.GestorTest.test_sin_proveedor_el_guion_da_el_fragmento)
+Sin conexión, la identidad sigue contestándose en el dispositivo. ... ok
+test_detecta_intenciones_locales (tests.test_dialogo.IntencionTest.test_detecta_intenciones_locales) ... ok
+test_cada_proveedor_trae_su_propio_limite (tests.test_enrutador.EndpointTest.test_cada_proveedor_trae_su_propio_limite)
+Groq da 1.000 solicitudes al día y un :free de OpenRouter 50: un ... ok
+test_el_archivo_del_repositorio_se_lee (tests.test_enrutador.EndpointTest.test_el_archivo_del_repositorio_se_lee) ... ok
+test_las_notas_con_guion_bajo_no_son_proveedores (tests.test_enrutador.EndpointTest.test_las_notas_con_guion_bajo_no_son_proveedores) ... ok
+test_reconoce_un_servidor_local (tests.test_enrutador.EndpointTest.test_reconoce_un_servidor_local) ... ok
+test_sin_nombre_de_clave_no_necesita_clave (tests.test_enrutador.EndpointTest.test_sin_nombre_de_clave_no_necesita_clave) ... ok
+test_sin_url_no_esta_configurado (tests.test_enrutador.EndpointTest.test_sin_url_no_esta_configurado) ... ok
+test_conserva_todos_los_proveedores (tests.test_enrutador.OrdenTest.test_conserva_todos_los_proveedores)
+Reordenar no puede perder respaldos: el guion siempre al final. ... ok
+test_pone_delante_el_papel_elegido (tests.test_enrutador.OrdenTest.test_pone_delante_el_papel_elegido) ... ok
+test_si_el_papel_no_esta_en_el_orden_no_cambia_nada (tests.test_enrutador.OrdenTest.test_si_el_papel_no_esta_en_el_orden_no_cambia_nada) ... ok
+test_el_analisis_va_al_modelo_de_razonamiento (tests.test_enrutador.PapelTest.test_el_analisis_va_al_modelo_de_razonamiento) ... ok
+test_la_charla_va_al_modelo_rapido (tests.test_enrutador.PapelTest.test_la_charla_va_al_modelo_rapido) ... ok
+test_lo_emocional_se_queda_en_conversacion (tests.test_enrutador.PapelTest.test_lo_emocional_se_queda_en_conversacion)
+Decisión de producto: ante malestar importa la rapidez y el tono, ... ok
+test_texto_vacio_no_rompe (tests.test_enrutador.PapelTest.test_texto_vacio_no_rompe) ... ok
+test_una_intervencion_larga_pide_razonamiento (tests.test_enrutador.PapelTest.test_una_intervencion_larga_pide_razonamiento) ... ok
+test_cada_modelo_respeta_su_limite (tests.test_enrutador.PresupuestoPorModeloTest.test_cada_modelo_respeta_su_limite) ... ok
+test_sin_limite_propio_usa_el_general (tests.test_enrutador.PresupuestoPorModeloTest.test_sin_limite_propio_usa_el_general) ... ok
+test_ninguna_respuesta_afirma_monitorear (tests.test_identidad_fase1.CincoPreguntasSinConexionTest.test_ninguna_respuesta_afirma_monitorear) ... ok
+test_puedes_monitorear_mi_salud (tests.test_identidad_fase1.CincoPreguntasSinConexionTest.test_puedes_monitorear_mi_salud) ... ok
+test_que_limitaciones_tienes (tests.test_identidad_fase1.CincoPreguntasSinConexionTest.test_que_limitaciones_tienes) ... ok
+test_que_puedes_hacer (tests.test_identidad_fase1.CincoPreguntasSinConexionTest.test_que_puedes_hacer) ... ok
+test_quien_eres (tests.test_identidad_fase1.CincoPreguntasSinConexionTest.test_quien_eres) ... ok
+test_quien_te_creo (tests.test_identidad_fase1.CincoPreguntasSinConexionTest.test_quien_te_creo) ... ok
+test_son_breves (tests.test_identidad_fase1.CincoPreguntasSinConexionTest.test_son_breves) ... ok
+test_caben_en_los_limites_del_cargador (tests.test_identidad_fase1.IdentidadTest.test_caben_en_los_limites_del_cargador)
+Lo que pasa de 700 caracteres o de 14 reglas se corta en silencio. ... ok
+test_conserva_el_acompanamiento_y_los_limites_medicos (tests.test_identidad_fase1.IdentidadTest.test_conserva_el_acompanamiento_y_los_limites_medicos) ... ok
+test_conserva_la_autoria_configurada (tests.test_identidad_fase1.IdentidadTest.test_conserva_la_autoria_configurada) ... ok
+test_la_presentacion_no_afirma_monitoreo_de_salud (tests.test_identidad_fase1.IdentidadTest.test_la_presentacion_no_afirma_monitoreo_de_salud) ... ok
+test_los_limites_llegan_a_las_instrucciones_del_modelo (tests.test_identidad_fase1.IdentidadTest.test_los_limites_llegan_a_las_instrucciones_del_modelo) ... ok
+test_no_proponer_actividad_en_cada_turno (tests.test_identidad_fase1.ReglasDeConversacionTest.test_no_proponer_actividad_en_cada_turno) ... ok
+test_pregunta_abierta_se_contesta_conversando (tests.test_identidad_fase1.ReglasDeConversacionTest.test_pregunta_abierta_se_contesta_conversando) ... ok
+test_se_conservan_las_reglas_anteriores (tests.test_identidad_fase1.ReglasDeConversacionTest.test_se_conservan_las_reglas_anteriores) ... ok
+test_sin_relleno_generico (tests.test_identidad_fase1.ReglasDeConversacionTest.test_sin_relleno_generico) ... ok
+test_activa_muestra_y_caduca (tests.test_medicion.DepuracionSttTest.test_activa_muestra_y_caduca) ... ok
+test_apagada_al_arrancar_y_no_muestra_nada (tests.test_medicion.DepuracionSttTest.test_apagada_al_arrancar_y_no_muestra_nada) ... ok
+test_apagar_borra_al_instante (tests.test_medicion.DepuracionSttTest.test_apagar_borra_al_instante) ... ok
+test_la_aplicacion_no_registra_ni_encola_texto_de_seguridad (tests.test_medicion.DepuracionSttTest.test_la_aplicacion_no_registra_ni_encola_texto_de_seguridad) ... ok
+test_la_ruta_de_seguridad_no_se_muestra_y_borra_lo_anterior (tests.test_medicion.DepuracionSttTest.test_la_ruta_de_seguridad_no_se_muestra_y_borra_lo_anterior) ... ok
+test_no_hay_ajuste_que_la_deje_encendida (tests.test_medicion.DepuracionSttTest.test_no_hay_ajuste_que_la_deje_encendida)
+Solo la tecla la activa: no existe en la configuración. ... ok
+test_nunca_escribe_en_el_registro (tests.test_medicion.DepuracionSttTest.test_nunca_escribe_en_el_registro) ... ok
+test_el_contexto_de_varios_turnos (tests.test_medicion.EvaluacionTest.test_el_contexto_de_varios_turnos) ... ok
+test_hoja_ida_y_vuelta_con_excel (tests.test_medicion.EvaluacionTest.test_hoja_ida_y_vuelta_con_excel) ... ok
+test_hojas_anonimas_y_clave_aparte (tests.test_medicion.EvaluacionTest.test_hojas_anonimas_y_clave_aparte) ... ok
+test_la_bateria_fija (tests.test_medicion.EvaluacionTest.test_la_bateria_fija) ... ok
+test_rechaza_hojas_incompletas (tests.test_medicion.EvaluacionTest.test_rechaza_hojas_incompletas) ... ok
+test_resumen_y_aviso_de_d2 (tests.test_medicion.EvaluacionTest.test_resumen_y_aviso_de_d2) ... ok
+test_avisa_si_el_objetivo_no_cabe_en_el_tope (tests.test_medicion.LongitudTest.test_avisa_si_el_objetivo_no_cabe_en_el_tope) ... ok
+test_el_archivo_trae_las_dos_rutas_con_los_valores_de_la_v17 (tests.test_medicion.LongitudTest.test_el_archivo_trae_las_dos_rutas_con_los_valores_de_la_v17) ... ok
+test_el_tope_va_con_la_pregunta_aunque_conteste_otro (tests.test_medicion.LongitudTest.test_el_tope_va_con_la_pregunta_aunque_conteste_otro)
+El caso real: razonamiento atendido por el respaldo Gemini. ... ok
+test_medidor_de_longitud (tests.test_medicion.LongitudTest.test_medidor_de_longitud) ... ok
+test_sin_archivo_no_hay_rutas (tests.test_medicion.LongitudTest.test_sin_archivo_no_hay_rutas) ... ok
+test_lee_ttft_usage_y_motivo_del_stream (tests.test_medicion.ModelosTest.test_lee_ttft_usage_y_motivo_del_stream) ... ok
+test_topes_de_la_seccion_13_5 (tests.test_medicion.ModelosTest.test_topes_de_la_seccion_13_5) ... ok
+test_un_429_se_clasifica_como_cuota (tests.test_medicion.ModelosTest.test_un_429_se_clasifica_como_cuota) ... ok
+test_categorias (tests.test_medicion.SttTest.test_categorias) ... ok
+test_el_resumen_no_contiene_texto (tests.test_medicion.SttTest.test_el_resumen_no_contiene_texto) ... ok
+test_errores_de_palabra (tests.test_medicion.SttTest.test_errores_de_palabra) ... ok
+test_guion_de_treinta_frases (tests.test_medicion.SttTest.test_guion_de_treinta_frases) ... ok
+test_treinta_sin_fallos_no_es_fiabilidad_perfecta (tests.test_medicion.SttTest.test_treinta_sin_fallos_no_es_fiabilidad_perfecta) ... ok
+test_guion_de_veinte_intervenciones (tests.test_medicion.VadTest.test_guion_de_veinte_intervenciones) ... ok
+test_pausa_corta_no_corta (tests.test_medicion.VadTest.test_pausa_corta_no_corta) ... ok
+test_pausa_mas_larga_que_el_umbral_corta (tests.test_medicion.VadTest.test_pausa_mas_larga_que_el_umbral_corta) ... ok
+test_recorte_por_energia_es_independiente_del_vad (tests.test_medicion.VadTest.test_recorte_por_energia_es_independiente_del_vad) ... ok
+test_sin_voz_se_distingue (tests.test_medicion.VadTest.test_sin_voz_se_distingue) ... ok
+test_subir_el_umbral_evita_el_corte (tests.test_medicion.VadTest.test_subir_el_umbral_evita_el_corte) ... ok
+test_tabla (tests.test_medicion.VadTest.test_tabla) ... ok
+test_distingue_paquete_ausente_de_biblioteca_ausente (tests.test_motores.DiagnosticoTest.test_distingue_paquete_ausente_de_biblioteca_ausente)
+Son dos fallos con soluciones distintas: no pueden confundirse. ... ok
+test_informa_de_los_dos_motores (tests.test_motores.DiagnosticoTest.test_informa_de_los_dos_motores) ... ok
+test_alsa_valida_porque_va_a_un_subproceso (tests.test_motores.DispositivoTest.test_alsa_valida_porque_va_a_un_subproceso) ... ok
+test_entrada_alsa_construye_argumentos_correctos (tests.test_motores.DispositivoTest.test_entrada_alsa_construye_argumentos_correctos) ... ok
+test_entrada_alsa_descarta_un_dispositivo_peligroso (tests.test_motores.DispositivoTest.test_entrada_alsa_descarta_un_dispositivo_peligroso) ... ok
+test_portaudio_acepta_indice_y_nombre_con_espacios (tests.test_motores.DispositivoTest.test_portaudio_acepta_indice_y_nombre_con_espacios)
+En Windows los nombres llevan espacios y paréntesis. ... ok
+test_en_linux_con_arecord_prefiere_alsa (tests.test_motores.SeleccionTest.test_en_linux_con_arecord_prefiere_alsa)
+En la Raspberry Pi se usa la vía ya validada en el dispositivo. ... ok
+test_en_linux_sin_arecord_cae_a_portaudio (tests.test_motores.SeleccionTest.test_en_linux_sin_arecord_cae_a_portaudio) ... ok
+test_en_windows_elige_portaudio (tests.test_motores.SeleccionTest.test_en_windows_elige_portaudio) ... ok
+test_respeta_el_motor_forzado (tests.test_motores.SeleccionTest.test_respeta_el_motor_forzado) ... ok
+test_sin_ningun_motor_el_error_explica_que_instalar (tests.test_motores.SeleccionTest.test_sin_ningun_motor_el_error_explica_que_instalar) ... ok
+test_carga_sin_excepciones_y_con_tipos_correctos (tests.test_nucleo.AjustesTest.test_carga_sin_excepciones_y_con_tipos_correctos) ... ok
+test_valida_dispositivo_alsa (tests.test_nucleo.AjustesTest.test_valida_dispositivo_alsa) ... ok
+test_la_cuota_no_es_transitoria (tests.test_nucleo.ClasesErrorTest.test_la_cuota_no_es_transitoria) ... ok
+test_divide_y_une_las_muy_cortas (tests.test_nucleo.FrasesTest.test_divide_y_une_las_muy_cortas) ... ok
+test_limpia_markdown_porque_se_pronuncia (tests.test_nucleo.FrasesTest.test_limpia_markdown_porque_se_pronuncia) ... ok
+test_texto_vacio (tests.test_nucleo.FrasesTest.test_texto_vacio) ... ok
+test_archivo_invalido_no_rompe_el_arranque (tests.test_nucleo.IdentidadTest.test_archivo_invalido_no_rompe_el_arranque) ... ok
+test_lee_todos_los_campos_del_archivo (tests.test_nucleo.IdentidadTest.test_lee_todos_los_campos_del_archivo) ... ok
+test_limite_diario (tests.test_nucleo.PresupuestoTest.test_limite_diario) ... ok
+test_modelos_independientes (tests.test_nucleo.PresupuestoTest.test_modelos_independientes) ... ok
+test_tres_429_bloquean_el_dia (tests.test_nucleo.PresupuestoTest.test_tres_429_bloquean_el_dia) ... ok
+test_un_429_bloquea_sin_reintento (tests.test_nucleo.PresupuestoTest.test_un_429_bloquea_sin_reintento) ... ok
+test_redacta_claves_con_forma_conocida_sin_registrarlas (tests.test_nucleo.RedaccionTest.test_redacta_claves_con_forma_conocida_sin_registrarlas) ... ok
+test_redacta_el_secreto_registrado (tests.test_nucleo.RedaccionTest.test_redacta_el_secreto_registrado) ... ok
+test_crear_cara_respeta_los_ajustes (tests.test_perfil_rostro.CaminoUnicoDeDibujoTest.test_crear_cara_respeta_los_ajustes) ... ok
+test_los_dos_usan_crear_cara_y_ninguno_cara_directamente (tests.test_perfil_rostro.CaminoUnicoDeDibujoTest.test_los_dos_usan_crear_cara_y_ninguno_cara_directamente) ... ok
+test_el_por_defecto_es_valido (tests.test_perfil_rostro.CargaEstrictaTest.test_el_por_defecto_es_valido) ... ok
+test_las_notas_con_guion_bajo_se_ignoran (tests.test_perfil_rostro.CargaEstrictaTest.test_las_notas_con_guion_bajo_se_ignoran) ... ok
+test_nombre_sin_rutas (tests.test_perfil_rostro.CargaEstrictaTest.test_nombre_sin_rutas) ... ok
+test_rechaza_lo_que_falta_sobra_o_no_toca (tests.test_perfil_rostro.CargaEstrictaTest.test_rechaza_lo_que_falta_sobra_o_no_toca) ... ok
+test_carga_el_perfil_configurado (tests.test_perfil_rostro.PerfilPorDefectoTest.test_carga_el_perfil_configurado) ... ok
+test_la_cara_usa_el_perfil (tests.test_perfil_rostro.PerfilPorDefectoTest.test_la_cara_usa_el_perfil) ... ok
+test_palet_sale_del_perfil (tests.test_perfil_rostro.PerfilPorDefectoTest.test_palet_sale_del_perfil) ... ok
+test_paleta_py_no_lleva_colores (tests.test_perfil_rostro.PerfilPorDefectoTest.test_paleta_py_no_lleva_colores) ... ok
+test_una_variante_cambia_la_cara (tests.test_perfil_rostro.VarianteEsSoloDatosTest.test_una_variante_cambia_la_cara) ... ok
+test_la_aplicacion_no_importa_el_prototipo (tests.test_prototipo_rostro.AislamientoTest.test_la_aplicacion_no_importa_el_prototipo)
+Criterio C3: sin cambios en la interfaz principal. ... ok
+test_analisis (tests.test_prototipo_rostro.LegibilidadTest.test_analisis) ... ok
+test_codigos_neutrales (tests.test_prototipo_rostro.LegibilidadTest.test_codigos_neutrales) ... ok
+test_el_umbral_se_fija_antes (tests.test_prototipo_rostro.LegibilidadTest.test_el_umbral_se_fija_antes) ... ok
+test_umbral_provisional_y_marcado (tests.test_prototipo_rostro.LegibilidadTest.test_umbral_provisional_y_marcado) ... ok
+test_cache_de_giros_acotada_por_memoria (tests.test_prototipo_rostro.RenderTest.test_cache_de_giros_acotada_por_memoria) ... ok
+test_la_boca_se_abre_con_la_voz (tests.test_prototipo_rostro.RenderTest.test_la_boca_se_abre_con_la_voz) ... ok
+test_la_sonrisa_curva_hacia_abajo_en_el_centro (tests.test_prototipo_rostro.RenderTest.test_la_sonrisa_curva_hacia_abajo_en_el_centro)
+El prototipo corrige la curva invertida de la boca de producción. ... ok
+test_reutiliza_la_composicion_de_produccion (tests.test_prototipo_rostro.RenderTest.test_reutiliza_la_composicion_de_produccion)
+La animación es la de A1: hablando + feliz abre la boca. ... ok
+test_todas_las_expresiones_y_tamanos (tests.test_prototipo_rostro.RenderTest.test_todas_las_expresiones_y_tamanos) ... ok
+test_distingue_peticion_invalida_de_cuota (tests.test_proveedor.ClasificacionTest.test_distingue_peticion_invalida_de_cuota)
+Confundirlas fue el fallo: un 400 caía en 'otro' y no decía nada. ... ok
+test_no_repite_dos_niveles_identicos (tests.test_proveedor.DegradacionTest.test_no_repite_dos_niveles_identicos)
+Repetir la misma petición solo gastaría una consulta de más. ... ok
+test_recuerda_el_nivel_que_funciona (tests.test_proveedor.DegradacionTest.test_recuerda_el_nivel_que_funciona) ... ok
+test_si_ningun_nivel_vale_propaga_el_error (tests.test_proveedor.DegradacionTest.test_si_ningun_nivel_vale_propaga_el_error) ... ok
+test_sin_razonamiento_acierta_a_la_primera (tests.test_proveedor.DegradacionTest.test_sin_razonamiento_acierta_a_la_primera)
+Valor por defecto: no se envía lo que suele sobrar. ... ok
+test_un_400_baja_de_nivel_y_acaba_funcionando (tests.test_proveedor.DegradacionTest.test_un_400_baja_de_nivel_y_acaba_funcionando)
+El caso real: el modelo no admitía `thinking_config`. ... ok
+test_un_429_no_se_reintenta_jamas (tests.test_proveedor.DegradacionTest.test_un_429_no_se_reintenta_jamas)
+La regla central: un 429 es un techo, no un fallo pasajero. ... ok
+test_una_sobrecarga_tampoco_se_reintenta_aqui (tests.test_proveedor.DegradacionTest.test_una_sobrecarga_tampoco_se_reintenta_aqui) ... ok
+test_entreabierta_sin_hablar (tests.test_respiracion_rostro.BocaExhalarTest.test_entreabierta_sin_hablar) ... ok
+test_hablando_la_voz_la_abre_mas (tests.test_respiracion_rostro.BocaExhalarTest.test_hablando_la_voz_la_abre_mas) ... ok
+test_solo_fuera_de_hablando (tests.test_respiracion_rostro.BocaExhalarTest.test_solo_fuera_de_hablando)
+Hablando manda la voz real (A1): en silencio, la boca se cierra. ... ok
+test_a_mitad_de_paso_aun_no_ha_llegado (tests.test_respiracion_rostro.DireccionTest.test_a_mitad_de_paso_aun_no_ha_llegado)
+Es una rampa en el tiempo, no un salto ni un suavizado de 0,5 s. ... ok
+test_al_volver_a_reposo_recupera_el_tamano (tests.test_respiracion_rostro.DireccionTest.test_al_volver_a_reposo_recupera_el_tamano) ... ok
+test_inhalar_crece_sostener_mantiene_exhalar_mengua (tests.test_respiracion_rostro.DireccionTest.test_inhalar_crece_sostener_mantiene_exhalar_mengua) ... ok
+test_inhalar_y_exhalar_ya_no_son_iguales (tests.test_respiracion_rostro.GeometriaTest.test_inhalar_y_exhalar_ya_no_son_iguales) ... ok
+test_las_rampas_duran_lo_que_cuenta_la_actividad (tests.test_respiracion_rostro.GeometriaTest.test_las_rampas_duran_lo_que_cuenta_la_actividad) ... ok
+test_los_tres_pasos_son_distintos_entre_si (tests.test_respiracion_rostro.GeometriaTest.test_los_tres_pasos_son_distintos_entre_si) ... ok
+test_no_sonrien (tests.test_respiracion_rostro.GeometriaTest.test_no_sonrien) ... ok
+test_boca_cerrada_sin_voz_y_abierta_con_voz (tests.test_rostro.CaraTest.test_boca_cerrada_sin_voz_y_abierta_con_voz) ... ok
+test_dibuja_todos_los_estados_sin_fallar (tests.test_rostro.CaraTest.test_dibuja_todos_los_estados_sin_fallar) ... ok
+test_la_curva_de_la_boca_va_en_el_sentido_correcto (tests.test_rostro.CaraTest.test_la_curva_de_la_boca_va_en_el_sentido_correcto)
+Regresión (Fase 1C): «feliz» salía con la boca en \u2229. ... ok
+test_la_onda_indica_el_microfono_abierto (tests.test_rostro.CaraTest.test_la_onda_indica_el_microfono_abierto)
+Es el indicador de captación: no puede ser decorativo. ... ok
+test_la_pantalla_queda_dentro_de_la_carcasa (tests.test_rostro.CaraTest.test_la_pantalla_queda_dentro_de_la_carcasa)
+Si la pantalla se saliera del marco, la cabeza se vería rota. ... ok
+test_lienzo_minimo_no_rompe (tests.test_rostro.CaraTest.test_lienzo_minimo_no_rompe) ... ok
+test_los_items_se_crean_una_sola_vez (tests.test_rostro.CaraTest.test_los_items_se_crean_una_sola_vez)
+El prototipo hacía delete('all') y recreaba todo en cada fotograma. ... ok
+test_los_ojos_caben_en_la_pantalla (tests.test_rostro.CaraTest.test_los_ojos_caben_en_la_pantalla) ... ok
+test_no_quedan_ondas_flotando (tests.test_rostro.CaraTest.test_no_quedan_ondas_flotando) ... ok
+test_rehace_la_geometria_al_cambiar_de_tamano (tests.test_rostro.CaraTest.test_rehace_la_geometria_al_cambiar_de_tamano) ... ok
+test_sin_banda_de_reflejo_en_la_pantalla (tests.test_rostro.CaraTest.test_sin_banda_de_reflejo_en_la_pantalla)
+En Canvas se leía como una línea en la frente, en todos los estados. ... ok
+test_tiene_las_piezas_de_la_cabeza (tests.test_rostro.CaraTest.test_tiene_las_piezas_de_la_cabeza) ... ok
+test_arco_curva_hacia_arriba (tests.test_rostro.FormasTest.test_arco_curva_hacia_arriba) ... ok
+test_radio_se_limita_a_la_mitad_del_lado (tests.test_rostro.FormasTest.test_radio_se_limita_a_la_mitad_del_lado)
+Un radio mayor que el lado deformaría la figura. ... ok
+test_rectangulo_redondeado_cierra_y_cabe_en_la_caja (tests.test_rostro.FormasTest.test_rectangulo_redondeado_cierra_y_cabe_en_la_caja) ... ok
+test_rotar_conserva_la_distancia_al_centro (tests.test_rostro.FormasTest.test_rotar_conserva_la_distancia_al_centro) ... ok
+test_mezcla_produce_hex_valido (tests.test_rostro.PaletaTest.test_mezcla_produce_hex_valido) ... ok
+test_mezcla_recorta_fuera_de_rango (tests.test_rostro.PaletaTest.test_mezcla_recorta_fuera_de_rango) ... ok
+test_alegria_arcos_gruesos_y_estrellas_dibujadas (tests.test_rostro_porte.FormasTest.test_alegria_arcos_gruesos_y_estrellas_dibujadas) ... ok
+test_boca_abierta_con_interior_oscuro_y_borde (tests.test_rostro_porte.FormasTest.test_boca_abierta_con_interior_oscuro_y_borde) ... ok
+test_boca_cerrada_es_una_banda_sin_borde (tests.test_rostro_porte.FormasTest.test_boca_cerrada_es_una_banda_sin_borde) ... ok
+test_cejas_son_capsulas_gruesas (tests.test_rostro_porte.FormasTest.test_cejas_son_capsulas_gruesas) ... ok
+test_la_ceja_no_es_una_recta_en_ningun_estado (tests.test_rostro_porte.FormasTest.test_la_ceja_no_es_una_recta_en_ningun_estado)
+El porte las dejó rectas y perdieron la forma: tienen que curvar. ... ok
+test_preocupacion_sube_los_extremos_interiores (tests.test_rostro_porte.FormasTest.test_preocupacion_sube_los_extremos_interiores) ... ok
+test_sin_destellos_fuera_de_la_alegria (tests.test_rostro_porte.FormasTest.test_sin_destellos_fuera_de_la_alegria) ... ok
+test_sin_rubor (tests.test_rostro_porte.FormasTest.test_sin_rubor)
+El responsable rechazó el rubor: el porte no lo reintroduce. ... ok
+test_con_carcasa_una_cuarta_parte_mas_pequena (tests.test_rostro_porte.ProporcionesTest.test_con_carcasa_una_cuarta_parte_mas_pequena)
+El rostro siempre fue demasiado grande: la cabeza mide 0,75 de lo ... ok
+test_los_rasgos_caben_en_la_pantalla (tests.test_rostro_porte.ProporcionesTest.test_los_rasgos_caben_en_la_pantalla) ... ok
+test_orejas_en_capsula (tests.test_rostro_porte.ProporcionesTest.test_orejas_en_capsula) ... ok
+test_proporciones_del_prototipo (tests.test_rostro_porte.ProporcionesTest.test_proporciones_del_prototipo) ... ok
+test_diecisiete_sitios_mueven_la_boca (tests.test_rostro_porte.RegresionesSinCarcasaTest.test_diecisiete_sitios_mueven_la_boca) ... ok
+test_la_onda_queda_dentro_de_la_carcasa (tests.test_rostro_porte.RegresionesSinCarcasaTest.test_la_onda_queda_dentro_de_la_carcasa) ... ok
+test_la_onda_solo_al_escuchar_de_verdad (tests.test_rostro_porte.RegresionesSinCarcasaTest.test_la_onda_solo_al_escuchar_de_verdad) ... ok
+test_la_sonrisa_curva_hacia_el_lado_bueno (tests.test_rostro_porte.RegresionesSinCarcasaTest.test_la_sonrisa_curva_hacia_el_lado_bueno) ... ok
+test_respiracion_distinta_y_con_direccion (tests.test_rostro_porte.RegresionesSinCarcasaTest.test_respiracion_distinta_y_con_direccion) ... ok
+test_todos_los_estados_se_dibujan_sin_fallar (tests.test_rostro_porte.RegresionesSinCarcasaTest.test_todos_los_estados_se_dibujan_sin_fallar) ... ok
+test_area_de_rostro (tests.test_rostro_porte.SinCarcasaTest.test_area_de_rostro) ... ok
+test_con_carcasa_si_la_dibuja (tests.test_rostro_porte.SinCarcasaTest.test_con_carcasa_si_la_dibuja) ... ok
+test_en_pantalla_ancha_crece_mas_a_lo_ancho (tests.test_rostro_porte.SinCarcasaTest.test_en_pantalla_ancha_crece_mas_a_lo_ancho) ... ok
+test_la_cara_ocupa_la_pantalla (tests.test_rostro_porte.SinCarcasaTest.test_la_cara_ocupa_la_pantalla)
+En reposo, los rasgos cubren \u2265 80 % del ancho y \u2265 60 % del alto. ... ok
+test_las_estrellas_acompanan_a_los_ojos (tests.test_rostro_porte.SinCarcasaTest.test_las_estrellas_acompanan_a_los_ojos)
+Giran con el tiempo: se comprueba una vuelta entera. Cada estrella ... ok
+test_los_ojos_usan_el_fondo_de_la_ventana (tests.test_rostro_porte.SinCarcasaTest.test_los_ojos_usan_el_fondo_de_la_ventana) ... ok
+test_los_rasgos_crecen_al_quitar_la_carcasa (tests.test_rostro_porte.SinCarcasaTest.test_los_rasgos_crecen_al_quitar_la_carcasa)
+También a lo ancho: ojos, boca y separación. ... ok
+test_nada_se_sale_de_la_ventana (tests.test_rostro_porte.SinCarcasaTest.test_nada_se_sale_de_la_ventana)
+Todas las expresiones, con voz y escucha, incluida la inspiración ... ok
+test_no_dibuja_cabeza (tests.test_rostro_porte.SinCarcasaTest.test_no_dibuja_cabeza) ... ok
+test_con_carcasa_se_ven (tests.test_rostro_porte.TextosDeLaAplicacionTest.test_con_carcasa_se_ven) ... ok
+test_la_depuracion_activa_se_ve_siempre (tests.test_rostro_porte.TextosDeLaAplicacionTest.test_la_depuracion_activa_se_ve_siempre)
+B2: si la transcripción se está mostrando, tiene que verse. ... ok
+test_sin_carcasa_no_se_ve_ninguno (tests.test_rostro_porte.TextosDeLaAplicacionTest.test_sin_carcasa_no_se_ve_ninguno) ... ok
+test_con_el_ritmo_nuevo_el_presupuesto_no_corta (tests.test_ruta_razonamiento.MedicionB4Test.test_con_el_ritmo_nuevo_el_presupuesto_no_corta)
+Regresión del corte de la franja 11h (17 de 20), SIN tocar el ... ok
+test_gemini_no_pasa_de_cuatro_por_franja (tests.test_ruta_razonamiento.MedicionB4Test.test_gemini_no_pasa_de_cuatro_por_franja) ... ok
+test_gemini_se_mide_por_el_camino_del_robot (tests.test_ruta_razonamiento.MedicionB4Test.test_gemini_se_mide_por_el_camino_del_robot) ... ok
+test_orden_alterna_modelos_y_reparte_rutas (tests.test_ruta_razonamiento.MedicionB4Test.test_orden_alterna_modelos_y_reparte_rutas) ... ok
+test_plan_por_defecto_cabe_en_los_topes (tests.test_ruta_razonamiento.MedicionB4Test.test_plan_por_defecto_cabe_en_los_topes) ... ok
+test_separar_ruta (tests.test_ruta_razonamiento.MedicionB4Test.test_separar_ruta) ... ok
+test_un_tiempo_agotado_de_gemini_es_un_dato (tests.test_ruta_razonamiento.MedicionB4Test.test_un_tiempo_agotado_de_gemini_es_un_dato) ... ok
+test_la_charla_sigue_con_su_tope (tests.test_ruta_razonamiento.RutaRazonamientoDesactivadaTest.test_la_charla_sigue_con_su_tope) ... ok
+test_la_configuracion_la_desactiva_sin_borrarla (tests.test_ruta_razonamiento.RutaRazonamientoDesactivadaTest.test_la_configuracion_la_desactiva_sin_borrarla) ... ok
+test_la_pregunta_es_de_razonamiento (tests.test_ruta_razonamiento.RutaRazonamientoDesactivadaTest.test_la_pregunta_es_de_razonamiento) ... ok
+test_por_el_gestor_tampoco_hay_aviso (tests.test_ruta_razonamiento.RutaRazonamientoDesactivadaTest.test_por_el_gestor_tampoco_hay_aviso) ... ok
+test_un_fallo_real_sigue_avisando (tests.test_ruta_razonamiento.RutaRazonamientoDesactivadaTest.test_un_fallo_real_sigue_avisando)
+Desactivar no es lo mismo que fallar: un 404 real sí avisa. ... ok
+test_va_directa_a_conversacion_sin_llamada_fallida_ni_aviso (tests.test_ruta_razonamiento.RutaRazonamientoDesactivadaTest.test_va_directa_a_conversacion_sin_llamada_fallida_ni_aviso) ... ok
+test_activa_con_intencion_explicita (tests.test_seguridad.GuardiaTest.test_activa_con_intencion_explicita) ... ok
+test_advierte_si_no_esta_verificado (tests.test_seguridad.GuardiaTest.test_advierte_si_no_esta_verificado) ... ok
+test_funciona_sin_recursos_configurados (tests.test_seguridad.GuardiaTest.test_funciona_sin_recursos_configurados) ... ok
+test_no_activa_con_modismos_ni_tristeza_normal (tests.test_seguridad.GuardiaTest.test_no_activa_con_modismos_ni_tristeza_normal) ... ok
+test_texto_vacio_no_activa (tests.test_seguridad.GuardiaTest.test_texto_vacio_no_activa) ... ok
+test_los_tres_proveedores_construyen_respuesta (tests.test_tokens_truncado.ContratoRespuestaTest.test_los_tres_proveedores_construyen_respuesta) ... ok
+test_se_construye_con_los_cuatro_campos_de_siempre (tests.test_tokens_truncado.ContratoRespuestaTest.test_se_construye_con_los_cuatro_campos_de_siempre) ... ok
+test_crece_con_cada_mensaje (tests.test_tokens_truncado.EstimacionTest.test_crece_con_cada_mensaje) ... ok
+test_sobreestima_las_instrucciones_reales (tests.test_tokens_truncado.EstimacionTest.test_sobreestima_las_instrucciones_reales)
+§13.4: el error va hacia arriba. ~680 tokens medidos. ... ok
+test_lee_usage_metadata_y_reconcilia (tests.test_tokens_truncado.GeminiTokensTest.test_lee_usage_metadata_y_reconcilia) ... ok
+test_la_fila_no_lleva_texto (tests.test_tokens_truncado.MetricasTest.test_la_fila_no_lleva_texto) ... ok
+test_migra_el_csv_de_la_v17_sin_perder_filas (tests.test_tokens_truncado.MetricasTest.test_migra_el_csv_de_la_v17_sin_perder_filas) ... ok
+test_gemini_lee_max_tokens (tests.test_tokens_truncado.MotivoFinTest.test_gemini_lee_max_tokens) ... ok
+test_normaliza_los_nombres_de_cada_proveedor (tests.test_tokens_truncado.MotivoFinTest.test_normaliza_los_nombres_de_cada_proveedor) ... ok
+test_openai_lee_finish_reason (tests.test_tokens_truncado.MotivoFinTest.test_openai_lee_finish_reason) ... ok
+test_truncada_vacia_no_es_error_sino_truncada (tests.test_tokens_truncado.MotivoFinTest.test_truncada_vacia_no_es_error_sino_truncada)
+Un modelo de razonamiento que agota el tope pensando. ... ok
+test_vacia_sin_truncado_sigue_siendo_error (tests.test_tokens_truncado.MotivoFinTest.test_vacia_sin_truncado_sigue_siendo_error) ... ok
+test_el_registro_no_contiene_el_texto (tests.test_tokens_truncado.OrquestadorTruncadoTest.test_el_registro_no_contiene_el_texto) ... ok
+test_truncada_con_frase_se_recorta (tests.test_tokens_truncado.OrquestadorTruncadoTest.test_truncada_con_frase_se_recorta) ... ok
+test_truncada_sin_frase_va_al_respaldo_local (tests.test_tokens_truncado.OrquestadorTruncadoTest.test_truncada_sin_frase_va_al_respaldo_local) ... ok
+test_una_completa_pasa_sin_tocar (tests.test_tokens_truncado.OrquestadorTruncadoTest.test_una_completa_pasa_sin_tocar) ... ok
+test_aplicar_marca_la_recortada (tests.test_tokens_truncado.RecorteTest.test_aplicar_marca_la_recortada) ... ok
+test_aplicar_no_toca_las_completas (tests.test_tokens_truncado.RecorteTest.test_aplicar_no_toca_las_completas) ... ok
+test_aplicar_sin_frase_pide_respaldo (tests.test_tokens_truncado.RecorteTest.test_aplicar_sin_frase_pide_respaldo) ... ok
+test_no_corta_en_decimales_ni_versiones (tests.test_tokens_truncado.RecorteTest.test_no_corta_en_decimales_ni_versiones) ... ok
+test_politica_desconocida_cae_en_la_conservadora (tests.test_tokens_truncado.RecorteTest.test_politica_desconocida_cae_en_la_conservadora) ... ok
+test_politica_ninguna_revierte_a_la_v17 (tests.test_tokens_truncado.RecorteTest.test_politica_ninguna_revierte_a_la_v17) ... ok
+test_recorta_a_la_ultima_frase_completa (tests.test_tokens_truncado.RecorteTest.test_recorta_a_la_ultima_frase_completa) ... ok
+test_respeta_comillas_de_cierre (tests.test_tokens_truncado.RecorteTest.test_respeta_comillas_de_cierre) ... ok
+test_sin_frase_completa_devuelve_vacio (tests.test_tokens_truncado.RecorteTest.test_sin_frase_completa_devuelve_vacio) ... ok
+test_cambio_de_dia_reinicia_y_no_pierde_la_reserva_en_vuelo (tests.test_tokens_truncado.ReservaTest.test_cambio_de_dia_reinicia_y_no_pierde_la_reserva_en_vuelo) ... ok
+test_con_usage_reconcilia_al_consumo_real (tests.test_tokens_truncado.ReservaTest.test_con_usage_reconcilia_al_consumo_real) ... ok
+test_concurrencia_no_sobrepasa_el_tope (tests.test_tokens_truncado.ReservaTest.test_concurrencia_no_sobrepasa_el_tope) ... ok
+test_confirmar_dos_veces_no_cuenta_doble (tests.test_tokens_truncado.ReservaTest.test_confirmar_dos_veces_no_cuenta_doble) ... ok
+test_disponible_se_niega_si_no_cabe_ni_la_salida (tests.test_tokens_truncado.ReservaTest.test_disponible_se_niega_si_no_cabe_ni_la_salida) ... ok
+test_el_limite_diario_de_solicitudes_cuenta_los_intentos (tests.test_tokens_truncado.ReservaTest.test_el_limite_diario_de_solicitudes_cuenta_los_intentos) ... ok
+test_lee_el_archivo_de_la_v17 (tests.test_tokens_truncado.ReservaTest.test_lee_el_archivo_de_la_v17) ... ok
+test_limite_diario_de_tokens_frena_antes_de_llamar (tests.test_tokens_truncado.ReservaTest.test_limite_diario_de_tokens_frena_antes_de_llamar) ... ok
+test_limite_por_minuto_de_tokens_y_se_libera_al_minuto (tests.test_tokens_truncado.ReservaTest.test_limite_por_minuto_de_tokens_y_se_libera_al_minuto) ... ok
+test_sin_usage_cuenta_la_reserva_entera (tests.test_tokens_truncado.ReservaTest.test_sin_usage_cuenta_la_reserva_entera) ... ok
+test_solicitud_fallida_cuenta_el_intento (tests.test_tokens_truncado.ReservaTest.test_solicitud_fallida_cuenta_el_intento)
+Los fallidos también cuentan en varios servicios. ... ok
+test_tiempo_agotado_cuenta_la_reserva_entera (tests.test_tokens_truncado.ReservaTest.test_tiempo_agotado_cuenta_la_reserva_entera) ... ok
+test_un_429_cuenta_intento_bloquea_y_no_reintenta (tests.test_tokens_truncado.ReservaTest.test_un_429_cuenta_intento_bloquea_y_no_reintenta) ... ok
+test_calibracion_con_silencio_fija_umbral_razonable (tests.test_vad.CalibracionTest.test_calibracion_con_silencio_fija_umbral_razonable) ... ok
+test_no_avisa_antes_de_calibrar (tests.test_vad.CalibracionTest.test_no_avisa_antes_de_calibrar) ... ok
+test_un_transitorio_no_invalida_la_calibracion (tests.test_vad.CalibracionTest.test_un_transitorio_no_invalida_la_calibracion)
+El clic de la tecla con la que se inicia el turno entra en la ... ok
+test_voz_durante_la_calibracion_no_envenena_el_umbral (tests.test_vad.CalibracionTest.test_voz_durante_la_calibracion_no_envenena_el_umbral)
+Reproduce el fallo del prototipo. ... ok
+test_cierra_tras_el_silencio_configurado (tests.test_vad.DeteccionTest.test_cierra_tras_el_silencio_configurado) ... ok
+test_exige_bloques_consecutivos (tests.test_vad.DeteccionTest.test_exige_bloques_consecutivos) ... ok
+test_histeresis_no_corta_en_silabas_suaves (tests.test_vad.DeteccionTest.test_histeresis_no_corta_en_silabas_suaves) ... ok
+test_registra_los_indices_de_bloque_de_la_voz (tests.test_vad.DeteccionTest.test_registra_los_indices_de_bloque_de_la_voz)
+El recorte usa índices, no marcas de tiempo: deben ser exactos. ... ok
+test_umbral_manual_salta_la_calibracion (tests.test_vad.DeteccionTest.test_umbral_manual_salta_la_calibracion) ... ok
+
+----------------------------------------------------------------------
+Ran 304 tests in 5.909s
+
+OK

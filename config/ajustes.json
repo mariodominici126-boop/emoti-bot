@@ -1,0 +1,84 @@
+{
+  "audio": {
+    "motor": "auto",
+    "frecuencia_captura": 16000,
+    "frecuencia_salida": 22050,
+    "dispositivo_captura": null,
+    "dispositivo_salida": null,
+    "ms_asentamiento": 400,
+    "ms_calibracion": 450,
+    "factor_umbral": 2.2,
+    "piso_umbral_rms": 120,
+    "histeresis": 0.65,
+    "bloques_confirmacion": 3,
+    "silencio_final_s": 1.0,
+    "max_audio_s": 12.0,
+    "margen_cola_s": 0.25,
+    "segundos_grabacion_fija": 5
+  },
+  "voz": {
+    "_voz": "motor, modelo_piper, velocidad y velocidad_espeak son valores de respaldo: manda el eje «voz» de config/perfil.json (config/voces/<nombre>.json). max_caracteres no es una preferencia y solo se cambia aquí.",
+    "motor": "auto",
+    "modelo_piper": "~/emoti-voices/es_AR-daniela-high.onnx",
+    "velocidad": 1.0,
+    "velocidad_espeak": 165,
+    "max_caracteres": 500
+  },
+  "stt": {
+    "motor": "auto",
+    "modelo_whisper": "small",
+    "modelo_activacion": "base",
+    "_modelos": "Conversación con small sin pista y despertar («Hola Emoti») con base y la pista del nombre: medido con voz real el 27-11-2026 (ver bitácora). Con los dos cargados, ~385 MB más de memoria en el PC.",
+    "computo_whisper": "int8",
+    "idioma": "es"
+  },
+  "ia": {
+    "orden_proveedores": [
+      "conversacion",
+      "candidato_gpt_oss_20b",
+      "razonamiento",
+      "remoto",
+      "local",
+      "guion"
+    ],
+    "modelo_remoto": "gemini-3.5-flash-lite",
+    "modelo_remoto_alterno": null,
+    "timeout_remoto_ms": 12000,
+    "timeout_gemini_ms": 20000,
+    "plazo_turno_ms": 15000,
+    "_plazo_turno_ms": "Techo del turno ENTERO (23-11-2026): sin él, la cadena podía tardar 12 + 12 + 20 = 44 s en llegar al guion. Agotado, contesta lo local sin esperar a la consulta en curso. Cada proveedor conserva su timeout propio como techo individual. 15 s (decisión del responsable): un cuelgue de Qwen (12 s) más gpt-oss (máx. visto 1,35 s) caben.",
+    "_timeout_gemini_ms": "Propio de Gemini (23-11-2026). Con los 12 s de Groq fallaba 1 de cada 8: el SDK pasa el plazo al servidor (X-Server-Timeout) y era el servidor el que cortaba con 504 a los ~11,6 s. 20 s cubren la cola medida (hasta 11,3 s con éxito en B4).",
+    "max_tokens_respuesta": 120,
+    "temperatura": 0.6,
+    "pensamiento": "off",
+    "timeout_local_ms": 45000,
+    "presupuesto_diario": 180,
+    "presupuesto_por_minuto": 10,
+    "politica_truncado": "recortar",
+    "_politica_truncado": "PROVISIONAL (Fase 1, A2, pendiente de decisión §13.8a). 'recortar' = a la última frase completa; si no queda ninguna, respaldo local. 'ninguna' = comportamiento de la v1.7. Sin reintentos en ningún caso."
+  },
+  "dialogo": {
+    "max_turnos_memoria": 12,
+    "guardar_transcripciones": false,
+    "activacion_por_voz": false,
+    "conversacion_continua": false,
+    "turnos_seguidos_max": 6,
+    "_conversacion_continua": "true: al terminar de contestar, el micrófono se reabre solo (las barras se ven) y si hablas es otro turno; si no hablas, vuelve a reposo. Tope: turnos_seguidos_max turnos o 3 minutos, y nunca tras la ruta de seguridad ni tras una despedida.",
+    "_activacion_por_voz": "true: escucha ligera de «Hola Emoti», «Buenos días, Emoti» y «Buenas tardes, Emoti» con el VAD y Whisper LOCAL (nada sale del equipo antes de activar; sin Whisper local no se activa). ESPACIO sigue funcionando igual."
+  },
+  "rostro": {
+    "pantalla_completa": true,
+    "fps": 30,
+    "mostrar_metricas": true,
+    "mostrar_controles": true,
+    "_mostrar_controles": "true = fila de teclas en el borde inferior («ESPACIO hablar · F grabación fija · …»). false = no se dibuja y los textos de abajo bajan a ocupar su sitio, sin dejar franja vacía.",
+    "carcasa": true,
+    "perfil": "hybrid_balanced",
+    "_perfil": "Valor de respaldo. Manda el eje «rostro» de config/perfil.json (perfil de usuario, D10); las proporciones y colores están en config/rostro/<nombre>.json.",
+    "_carcasa": "true = cabeza de robot con pantalla (desarrollo en el portátil). false = solo ojos, cejas, boca y barras del micrófono sobre el fondo, para la pantalla montada dentro del robot; la cara ocupa la ventana entera y la interfaz no escribe textos (salvo la depuración T activa)."
+  },
+  "region": {
+    "pais": "República Dominicana",
+    "_pais": "País donde se usa EMOTI-BOT. Los números de config/crisis.json solo se ofrecen si son de este país; con otro, ni la ruta de crisis ni el directorio dan ninguno."
+  }
+}

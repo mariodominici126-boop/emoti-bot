@@ -1,0 +1,105 @@
+Muestras de voz con frases reales de EMOTI-BOT (22-11-2026).
+Nombre: <texto>_<voz>_<velocidad>.wav. 'velocidad' es el length_scale de
+Piper: menor = más rápido. claude_0.88 es la voz y velocidad actuales,
+como referencia.
+
+Textos:
+{
+  "presentacion": "Hola, soy Emoti-Bot, un robot acompañante conversacional diseñado por el grupo Emoti. Actualmente estoy en desarrollo, pero en un futuro espero poder ayudar a muchas personas y acompañarlas en los momentos difíciles. Un gusto conocerte.",
+  "respiracion": "Vamos a respirar juntos 4 veces. Si en algún momento quieres parar, dime para y lo dejamos. Ponte cómodo y sigue mi voz. Inhala por la nariz, contando cuatro. Sostén el aire. Suelta el aire despacio por la boca. Ya está. Nota cómo estás ahora, sin juzgarlo. Si te vino bien, puedes repetirlo cuando quieras.",
+  "consuelo": "Qué mala pata. ¿Qué fue lo que pasó exactamente?"
+}
+
+Medidas:
+[
+  {
+    "voz": "claude",
+    "velocidad": 0.88,
+    "texto": "presentacion",
+    "palabras": 36,
+    "segundos": 14.84,
+    "palabras_por_s": 2.43,
+    "t_sintesis_s": 0.62,
+    "archivo": "presentacion_claude_0.88.wav"
+  },
+  {
+    "voz": "claude",
+    "velocidad": 0.88,
+    "texto": "respiracion",
+    "palabras": 55,
+    "segundos": 20.1,
+    "palabras_por_s": 2.74,
+    "t_sintesis_s": 0.81,
+    "archivo": "respiracion_claude_0.88.wav"
+  },
+  {
+    "voz": "claude",
+    "velocidad": 0.88,
+    "texto": "consuelo",
+    "palabras": 9,
+    "segundos": 3.07,
+    "palabras_por_s": 2.94,
+    "t_sintesis_s": 0.09,
+    "archivo": "consuelo_claude_0.88.wav"
+  },
+  {
+    "voz": "daniela",
+    "velocidad": 1.0,
+    "texto": "presentacion",
+    "palabras": 36,
+    "segundos": 11.68,
+    "palabras_por_s": 3.08,
+    "t_sintesis_s": 1.44,
+    "archivo": "presentacion_daniela_1.00.wav"
+  },
+  {
+    "voz": "daniela",
+    "velocidad": 1.0,
+    "texto": "respiracion",
+    "palabras": 55,
+    "segundos": 16.02,
+    "palabras_por_s": 3.43,
+    "t_sintesis_s": 1.88,
+    "archivo": "respiracion_daniela_1.00.wav"
+  },
+  {
+    "voz": "daniela",
+    "velocidad": 1.0,
+    "texto": "consuelo",
+    "palabras": 9,
+    "segundos": 2.37,
+    "palabras_por_s": 3.8,
+    "t_sintesis_s": 0.31,
+    "archivo": "consuelo_daniela_1.00.wav"
+  },
+  {
+    "voz": "daniela",
+    "velocidad": 0.88,
+    "texto": "presentacion",
+    "palabras": 36,
+    "segundos": 11.1,
+    "palabras_por_s": 3.24,
+    "t_sintesis_s": 1.62,
+    "archivo": "presentacion_daniela_0.88.wav"
+  },
+  {
+    "voz": "daniela",
+    "velocidad": 0.88,
+    "texto": "respiracion",
+    "palabras": 55,
+    "segundos": 15.07,
+    "palabras_por_s": 3.65,
+    "t_sintesis_s": 1.64,
+    "archivo": "respiracion_daniela_0.88.wav"
+  },
+  {
+    "voz": "daniela",
+    "velocidad": 0.88,
+    "texto": "consuelo",
+    "palabras": 9,
+    "segundos": 2.24,
+    "palabras_por_s": 4.02,
+    "t_sintesis_s": 0.31,
+    "archivo": "consuelo_daniela_0.88.wav"
+  }
+]

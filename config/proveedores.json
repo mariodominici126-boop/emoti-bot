@@ -1,0 +1,118 @@
+{
+  "_COMO_FUNCIONA": [
+    "Cada entrada es un modelo accesible por una API compatible con OpenAI.",
+    "El enrutador elige 'conversacion' para hablar y 'razonamiento' para las",
+    "preguntas que piden analizar, comparar, calcular o decidir.",
+    "'clave' es el nombre con el que se guarda la clave API: se introduce con",
+    "la tecla K dentro de EMOTI-BOT, o por la variable de entorno",
+    "EMOTI_CLAVE_<NOMBRE en mayúsculas>.",
+    "'max_dia' y 'max_minuto' son NUESTRO límite, por debajo del límite real",
+    "del proveedor, para frenar antes de que nos corte él.",
+    "Para desactivar un proveedor, pon su 'url' en cadena vacía."
+  ],
+  "conversacion": {
+    "descripcion": "Conversar, escuchar, responder rápido y acompañar.",
+    "url": "https://api.groq.com/openai/v1",
+    "modelo": "qwen/qwen3.8-27b",
+    "clave": "groq",
+    "max_tokens": 120,
+    "temperatura": 0.7,
+    "max_dia": 400,
+    "max_minuto": 12,
+    "max_tokens_dia": 180000,
+    "max_tokens_minuto": 7000,
+    "_TOPES_DE_TOKENS": [
+      "Fase 1, A3. Topes PROPIOS, por debajo de los del proveedor (8.000/min y",
+      "200.000/día): 90 % del diario y 87,5 % del de minuto. La reserva de",
+      "cada turno es la entrada estimada al alza más max_tokens, así que con",
+      "el prompt actual caben ~4-5 turnos por minuto. Verifica los límites",
+      "vigentes en console.groq.com: son por cuenta y cambian."
+    ],
+    "_LIMITES_DEL_PROVEEDOR": [
+      "Plan gratuito de Groq, sin tarjeta, verificado en noviembre de 2026:",
+      "30 solicitudes/min · 1.000/día · 8.000 tokens/min · 200.000 tokens/día.",
+      "El que primero se agote manda, y suele ser el de tokens: 200.000 entre",
+      "1.000 solicitudes son 200 tokens de media por solicitud.",
+      "Clave en console.groq.com/keys"
+    ]
+  },
+  "razonamiento": {
+    "_DESACTIVADO": [
+      "DESACTIVADA el 22-11-2026 por decisión PROVISIONAL del responsable",
+      "(opción d). Motivo: el modelo que justificaba esta ruta,",
+      "deepseek-v4.1-flash-1017, dejó de estar disponible gratis en",
+      "OpenRouter (404 «unavailable for free»; el catálogo ya no tiene ningún",
+      "DeepSeek ':free') y la §3.2 de la especificación prohíbe servicios de",
+      "pago. Con 'url' vacía no se llama: las preguntas de razonamiento van",
+      "al modelo de conversación con su propio tope de 320 tokens",
+      "(config/longitud.json).",
+      "Es revisable: si B6 muestra que GPT-OSS no resuelve bien el",
+      "razonamiento, se reabre con datos. Para reactivarla, vuelve a poner",
+      "'url': 'https://openrouter.ai/api/v1' y un modelo disponible."
+    ],
+    "descripcion": "Razonamiento complejo, resolver problemas, analizar situaciones.",
+    "url": "",
+    "modelo": "deepseek/deepseek-v4.1-flash-1017:free",
+    "clave": "openrouter",
+    "max_tokens": 320,
+    "temperatura": 0.3,
+    "max_dia": 40,
+    "max_minuto": 8,
+    "max_tokens_dia": 0,
+    "max_tokens_minuto": 0,
+    "_TOPES_DE_TOKENS": "0 = sin tope propio de tokens: OpenRouter limita los modelos :free por solicitudes. Los tokens se cuentan igual.",
+    "cabeceras": {
+      "HTTP-Referer": "https://github.com/",
+      "X-Title": "EMOTI-BOT"
+    },
+    "_LIMITES_DEL_PROVEEDOR": [
+      "Modelos :free de OpenRouter, verificado en noviembre de 2026:",
+      "20 solicitudes/min · 50/día sin haber comprado créditos nunca,",
+      "1.000/día si la cuenta ha comprado 10 créditos alguna vez.",
+      "Las solicitudes fallidas también cuentan para el límite diario, así que",
+      "nuestro tope propio es 40 y no 50.",
+      "El sufijo ':free' es lo único que hace gratuito el modelo: si lo quitas,",
+      "pasa a ser de pago.",
+      "Clave en openrouter.ai/keys"
+    ]
+  },
+  "local": {
+    "descripcion": "Modelo en el propio equipo, como respaldo sin Internet.",
+    "url": "http://127.0.0.1:8080/v1",
+    "modelo": "local",
+    "clave": "",
+    "max_tokens": 120,
+    "temperatura": 0.6,
+    "max_dia": 100000,
+    "max_minuto": 60
+  },
+  "candidato_gpt_oss_20b": {
+    "_CANDIDATO": [
+      "Decisión D6 (§14.1): tercer candidato en la comparación a ciegas (B6) y",
+      "en la medición de modelos (B4). NO es el modelo de producción: no está en",
+      "ia.orden_proveedores de config/ajustes.json, así que el robot no lo usa.",
+      "Solo lo usan los instrumentos cuando se les nombra explícitamente.",
+      "Misma cuenta y misma clave que Qwen (Groq). Groq aplica la cuota POR",
+      "MODELO, así que no resta de la cuota diaria de Qwen; pero los topes de",
+      "medición de §13.5 (20 por franja en Groq) se cuentan sumando los dos.",
+      "Es un modelo de razonamiento: su razonamiento no se desactiva (§14.3).",
+      "'reasoning_effort' en 'parametros' lo baja al mínimo; los tokens que",
+      "gaste salen en B4. Verifica el identificador y la clasificación",
+      "(Production) en console.groq.com antes de medir."
+    ],
+    "descripcion": "Respaldo justo detrás de Qwen (23-11-2026): misma cuenta de Groq, así que no salva una cuota agotada, pero sí un fallo o un cuelgue de Qwen. Elegible como modelo principal en el perfil (D6).",
+    "papel": "conversacion",
+    "url": "https://api.groq.com/openai/v1",
+    "modelo": "openai/gpt-oss-20b",
+    "clave": "groq",
+    "max_tokens": 120,
+    "temperatura": 0.7,
+    "parametros": {
+      "reasoning_effort": "low"
+    },
+    "max_dia": 400,
+    "max_minuto": 12,
+    "max_tokens_dia": 180000,
+    "max_tokens_minuto": 7000
+  }
+}

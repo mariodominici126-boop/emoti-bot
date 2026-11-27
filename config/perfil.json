@@ -1,0 +1,8 @@
+{
+  "_que_es": "Perfil de usuario (D10): elige UNA opción en cada eje, de forma independiente. Cada valor es el nombre de un archivo de datos: rostro → config/rostro/, voz → config/voces/, personalidad → config/personalidades/, estilo → config/estilos/; modelo → una entrada de config/proveedores.json con papel «conversacion» (o «conversacion» misma). No admite ninguna otra clave: las normas de seguridad, la longitud y el consumo no son preferencias.",
+  "rostro": "hybrid_balanced",
+  "voz": "daniela",
+  "personalidad": "estandar",
+  "estilo": "estandar",
+  "modelo": "conversacion"
+}

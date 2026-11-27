@@ -1,0 +1,21 @@
+{
+  "_QUE_ES": [
+    "Fase 1, C4. Umbral de aceptación de la prueba de legibilidad de",
+    "expresiones. §13.8c: lo decide el RESPONSABLE y se fija ANTES de ver",
+    "ningún resultado, o se acomodará a lo que salga.",
+    "Mientras no lo decida, rige este valor PROVISIONAL y conservador.",
+    "bin/legibilidad_rostro.py se niega a analizar si este archivo se",
+    "modificó después de la primera hoja de respuestas."
+  ],
+  "provisional": true,
+  "decidido_por": "",
+  "acierto_minimo_por_expresion": 0.70,
+  "confusion_maxima_con_otra": 0.25,
+  "participantes_minimos": 8,
+  "_CRITERIO": [
+    "Una expresión PASA si la identifica correctamente al menos el 70 % de",
+    "los participantes y ninguna otra respuesta concreta se lleva más del",
+    "25 %. Un diseño pasa si pasan sus siete expresiones. Con menos de 8",
+    "participantes el resultado se informa, pero no decide nada."
+  ]
+}

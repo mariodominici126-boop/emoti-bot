@@ -1,0 +1,52 @@
+# ---- Secretos: nunca al repositorio -------------------------------------
+*.key
+*.pem
+credenciales.json
+.env
+.env.*
+config/ajustes.local.json
+
+# ---- Datos locales de la máquina ---------------------------------------
+logs/*
+!logs/.gitkeep
+*.log
+*.csv
+presupuesto*.json
+
+# ---- Audio y modelos: pesados y no versionables ------------------------
+# Corpus de voz: voz real de personas. Vive fuera del proyecto, en la
+# carpeta de configuración de la máquina; esto es solo una red de seguridad.
+corpus/
+*.wav
+*.mp3
+*.ogg
+*.onnx
+*.onnx.json
+*.gguf
+*.bin
+emoti-voices/
+voices/
+modelos/
+
+# ---- Python ------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+emoti-env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---- Editores y sistema ------------------------------------------------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Herramientas locales ----------------------------------------------
+.claude/

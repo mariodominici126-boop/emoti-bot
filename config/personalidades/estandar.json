@@ -1,0 +1,5 @@
+{
+  "_que_es": "Personalidad (eje «personalidad» del perfil): líneas de TONO que se añaden a las instrucciones en su propia sección, detrás de las normas de config/identidad.json y siempre antes de «Esto prevalece sobre el estilo y el tono». Cambian el tono, nunca las normas. Máximo 3 frases de 100 caracteres y 200 en total.",
+  "descripcion": "La de hoy: sin tono añadido.",
+  "tono": []
+}

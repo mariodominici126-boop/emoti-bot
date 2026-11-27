@@ -1,0 +1,59 @@
+# EMOTI-BOT · dependencias
+#
+# El robot ARRANCA sin ninguna de estas: el rostro, las actividades, la ruta
+# de seguridad y el modo sin conexión usan solo la biblioteca estándar y
+# Tkinter. Cada paquete añade una capacidad y su ausencia se degrada con un
+# aviso, no con un error.
+#
+# Comprueba qué te falta en TU sistema con:
+#     python bin/comprobar_entorno.py
+
+# --- Audio: micrófono y altavoz -----------------------------------------
+# En Windows y macOS es obligatorio: la rueda de pip trae PortAudio dentro.
+# En la Raspberry Pi es opcional, porque allí se usa arecord/aplay de ALSA;
+# instálalo solo si prefieres el mismo motor en las dos máquinas
+# (entonces hace falta además: sudo apt install libportaudio2).
+sounddevice>=0.4.6
+
+# --- Voz neuronal local (recomendado) -----------------------------------
+piper-tts>=1.2.0
+
+# --- Reconocimiento de voz local (recomendado) --------------------------
+# Separa el reconocimiento del razonamiento: el audio deja de salir del
+# dispositivo y el consumo del proveedor remoto baja de forma drástica.
+faster-whisper>=1.0.0
+
+# --- Proveedor remoto (opcional) ----------------------------------------
+google-genai>=1.0.0
+
+# --- Prototipo visual de la Fase 1C (opcional, EXPERIMENTAL) ------------
+# Solo lo usan prototipos/rostro_pillow/ y sus bancos de prueba. El robot no
+# lo necesita: el rostro de producción sigue siendo Tkinter puro. Probado
+# con Pillow 13.0.0. En la Raspberry: sudo apt install python3-pil
+# python3-pil.imagetk, o pip dentro del entorno virtual.
+pillow>=10.0
+
+
+# ========================================================================
+# Dependencias del SISTEMA (no se instalan con pip)
+# ========================================================================
+#
+# Raspberry Pi / Linux:
+#     sudo apt install alsa-utils espeak-ng python3-tk
+#       alsa-utils  → arecord y aplay (micrófono y altavoz)
+#       espeak-ng   → voz de respaldo
+#       python3-tk  → interfaz gráfica
+#
+# Windows:
+#     Python de python.org marcando «Add python.exe to PATH» y «tcl/tk».
+#     winget install eSpeak-NG.eSpeak-NG      (voz de respaldo, opcional)
+#     El micrófono y el altavoz los da sounddevice: nada más que instalar.
+#
+# macOS:
+#     brew install espeak-ng python-tk
+#
+# Instalación de los paquetes de Python:
+#     python -m pip install --timeout 180 --retries 10 -r requirements.txt
+#
+# El tiempo de espera largo no es un capricho: la instalación de NumPy falló
+# por ReadTimeoutError durante el desarrollo del prototipo.

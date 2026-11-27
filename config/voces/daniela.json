@@ -1,0 +1,8 @@
+{
+  "_que_es": "Voz (eje «voz» del perfil). Solo admite motor, modelo_piper, velocidad y velocidad_espeak; el tope de caracteres no es una preferencia.",
+  "descripcion": "Piper es_AR-daniela-high (la voz de hoy). Licencia en el README.",
+  "motor": "auto",
+  "modelo_piper": "~/emoti-voices/es_AR-daniela-high.onnx",
+  "velocidad": 1.0,
+  "velocidad_espeak": 165
+}
