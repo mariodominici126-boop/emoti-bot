@@ -6,6 +6,61 @@ que distingue una prueba que funcionó de un producto terminado.
 
 ---
 
+## 2026-11-28 · Ejecutable de Windows que funciona en limpio
+
+**Decisiones del responsable.**
+- **Voz `claude` dentro y por defecto.** Es Apache-2.0 y se puede
+  redistribuir. Paquete, `config/ajustes.json`, `config/perfil.json`, el perfil
+  por defecto y el README dicen ahora la misma voz.
+- **`daniela` a petición.** Es CC BY-SA 4.0 y no va dentro: se baja cuando se
+  elige.
+- **Whisper `small` dentro, no `base`.** En el corpus, base dio 0/9 en las
+  frases 3, 4 y 5 y small 9/9: arrancar la conversación con base repetiría el
+  fallo. `base` se baja al encender «Hola Emoti»; ESPACIO funciona mientras.
+- **Registros en `%LOCALAPPDATA%\emotibot\logs`**, solo en el ejecutable.
+  Desde el código siguen en `logs/`.
+- **Requisitos en dos archivos.** `requirements.txt` con rangos, para cualquier
+  plataforma, también aarch64. Las versiones exactas, solo para construir,
+  en `empaquetado/requisitos-ejecutable-windows.txt`.
+
+**Archivos modificados.**
+- Código nuevo o cambiado: `emotibot/descargas.py` (nuevo), `rutas.py`
+  (CONGELADO, RECURSOS, LOGS, VOCES_USUARIO), `ajustes.py` (`ruta_piper` busca
+  en voces bajadas y en el paquete; VOZ_EMPAQUETADA), `voz/__init__.py`
+  (respaldo: la voz empaquetada antes que espeak-ng),
+  `stt/whisper_local.py` (carga small de su carpeta) y `app.py`:
+  - base y la voz elegida se bajan en hilos, con progreso en el texto de
+    estado;
+  - la muestra del asistente avisa si suena la voz de respaldo.
+- Empaquetado: `empaquetado/` (spec, lanzador, sustituto `av`, licencia de
+  la voz, LEEME, bloqueo).
+- Pruebas: `test_empaquetado.py` (nueva), `test_stt_dos_modelos.py` y
+  `test_asistente.py` (la voz que se cambia ahora es Daniela).
+
+**PyAV fuera, comprobado.** Solo `whisper_local.py` llama a `transcribe` y
+le pasa un array float32. Solo pasaría un WAV si faltara numpy, y el
+ejecutable lo lleva siempre. Con el sustituto vacío, Whisper transcribió una
+frase real de `muestras_voz/` sin tocar PyAV.
+
+**Resultado medido** (Windows, este PC).
+- Tamaño: **770 MB**. Small son 464 MB y la voz 61 MB; PyAV, hebreo y árabe
+  ya no están.
+- Ventana: 7,1 s la primera vez; 2,9 s después.
+- Memoria: unos 600 MB.
+- Máquina limpia SIN red (sin voces, sin caché, Daniela elegida, «Hola Emoti»
+  encendido):
+  - la ventana sale a 6,1 s;
+  - habla `claude` y conversa con `small`;
+  - el despertar queda apagado con aviso;
+  - no se cae.
+- Máquina limpia CON red: ventana a 6,0 s. Base y Daniela bajaron en
+  segundo plano en unos 20 s y entraron solas: «Activación por voz
+  encendida» y «Voz cambiada en caliente».
+- Batería: 582 pruebas en verde.
+
+**No resuelto.** Sin carcasa no se escribe nada, así que el progreso de una
+descarga no se ve. Con carcasa se ve en el texto de estado y en el asistente.
+
 ## 2026-11-27 · El «!» sale de entre los ojos; «pensando» sin marca
 
 **Fallo (lo vio el responsable).** Sin carcasa, el «!» iba vertical y centrado

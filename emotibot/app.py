@@ -17,6 +17,7 @@ Cada etapa se cronometra por separado y se anota en logs/latencia.csv.
 from __future__ import annotations
 
 import dataclasses
+from pathlib import Path
 import queue
 import threading
 import time
@@ -29,7 +30,7 @@ from . import ajustes as mod_ajustes
 from . import asistente as mod_asistente
 from . import configuracion as conf
 from . import perfil_usuario as pu
-from . import credenciales, identidad as mod_identidad, metricas, registro, rutas
+from . import credenciales, descargas, identidad as mod_identidad, metricas, registro, rutas
 from . import stt as mod_stt
 from . import voz as mod_voz
 from .audio.captura import ErrorCaptura, Microfono, MotivoFin
@@ -109,6 +110,14 @@ class Aplicacion:
         self.bitacora = metricas.Bitacora()
 
         self.eventos: queue.Queue[tuple[str, object]] = queue.Queue()
+        if rutas.CONGELADO and not mod_ajustes.ruta_piper(self.config).is_file():
+            # Ejecutable con una voz elegida que no viaja en el paquete
+            # (Daniela): suena la incluida y la elegida se baja en un hilo.
+            config_voz = self.config
+            threading.Thread(target=lambda: (
+                self._bajar_voz_si_falta(config_voz),
+                self.eventos.put(("voz_nueva", mod_voz.crear(config_voz)))),
+                name="bajar-voz", daemon=True).start()
         self.cancelar_turno = threading.Event()
         self.ocupado = False
         self.microfono_silenciado = False
@@ -237,12 +246,39 @@ class Aplicacion:
     def _transcriptor_activacion(self):
         from .stt.whisper_local import PISTA_NOMBRE, WhisperLocal
         from .stt.base import ErrorStt
+        modelo = self.config.stt.modelo_activacion
+        if not descargas.whisper_en_disco(modelo):
+            # No va en el paquete: se baja en segundo plano y, al terminar,
+            # se enciende. Mientras tanto ESPACIO funciona igual.
+            self._bajar_whisper_activacion(modelo)
+            return None
         try:
             return WhisperLocal(self.config.stt, modelo=self.config.stt.modelo_activacion,
                                 pista=PISTA_NOMBRE)
         except ErrorStt as exc:
             log.warning("Sin Whisper para el despertar: %s", exc)
             return None
+
+    def _bajar_whisper_activacion(self, modelo: str) -> None:
+        if getattr(self, "_bajando_activacion", False):
+            return
+        self._bajando_activacion = True
+
+        def bajar() -> None:
+            try:
+                descargas.descargar_whisper(modelo, lambda f: self.eventos.put(
+                    ("descarga", f"Bajando el reconocimiento de «Hola Emoti»… "
+                                 f"{descargas.porcentaje(f)}")))
+                self.eventos.put(("activacion_lista", None))
+            except descargas.ErrorDescarga as exc:
+                log.warning("%s", exc)
+                self.eventos.put(("descarga", "No pude bajar el reconocimiento de "
+                                  "«Hola Emoti» (¿sin conexión?). Pulsa ESPACIO para "
+                                  "hablar; lo intento en el próximo arranque."))
+            finally:
+                self._bajando_activacion = False
+
+        threading.Thread(target=bajar, name="bajar-despertar", daemon=True).start()
 
     def _puede_escuchar_activacion(self) -> bool:
         """Desde el hilo de activación: nunca durante un turno, mientras habla
@@ -668,9 +704,26 @@ class Aplicacion:
         self.panel_directorio._firma = None
 
     def _crear_voz(self, nombre: str):
-        """Un sintetizador con la voz `nombre` (carga el modelo de Piper)."""
+        """Un sintetizador con la voz `nombre` (carga el modelo de Piper). Si
+        el modelo no está y se puede bajar (Daniela no va en el paquete), lo
+        baja primero, con el progreso en pantalla. Se llama desde un hilo."""
         config = pu.aplicar(self.config, dataclasses.replace(self.perfil, voz=nombre))
+        self._bajar_voz_si_falta(config)
         return mod_voz.crear(config)
+
+    def _bajar_voz_si_falta(self, config) -> None:
+        ruta = mod_ajustes.ruta_piper(config)
+        if ruta.is_file() or not descargas.voz_descargable(ruta):
+            return
+        licencia = descargas.licencia_voz(ruta)
+        try:
+            descargas.descargar_voz(ruta, lambda f: self.eventos.put(
+                ("descarga", f"Bajando la voz ({licencia})… {descargas.porcentaje(f)}")))
+            self.eventos.put(("descarga", ""))
+        except descargas.ErrorDescarga as exc:
+            log.warning("%s", exc)
+            self.eventos.put(("descarga", "No pude bajar esa voz (¿sin conexión?): "
+                              "suena la voz incluida."))
 
     def _oir_voz(self, nombre: str) -> None:
         """La frase de muestra con esa voz. El modelo se carga en un hilo (no
@@ -703,8 +756,11 @@ class Aplicacion:
             self._nota_asistente = ("Aquí no puedo hacerla sonar: falta el motor de voz "
                                     "o el altavoz.")
             return
-        self._nota_asistente = ("" if voz.nombre == "piper" else
-                                "Falta el modelo de Piper de esta voz: oyes la de respaldo.")
+        config = pu.aplicar(self.config, dataclasses.replace(self.perfil, voz=nombre))
+        elegida = mod_ajustes.ruta_piper(config).name
+        es_ella = voz.nombre == "piper" and Path(str(getattr(voz, "modelo", ""))).name == elegida
+        self._nota_asistente = ("" if es_ella else
+                                "Falta el modelo de esta voz: oyes la de respaldo.")
         frase = f"Hola, soy {self.identidad.nombre}. Así sonaría mi voz."
         self.altavoz.hablar(
             (b"".join(voz.sintetizar(f)) for f in (frase,)), voz.frecuencia,
@@ -1304,6 +1360,14 @@ class Aplicacion:
             self._fin_habla = time.monotonic()
             self.raiz.after(int(MARGEN_CONVERSACION_S * 1000),
                             lambda: self._pedir_turno(fijo=False))
+        elif tipo == "descarga":
+            self.detalle = str(valor)
+            if self.asistente is not None:
+                self._nota_asistente = str(valor)
+        elif tipo == "activacion_lista":
+            self.detalle = "Listo: ya puedes despertarme con «Hola Emoti»."
+            if self.config.dialogo.activacion_por_voz and self.activacion is None:
+                self.activacion = self._crear_activacion()
         elif tipo == "voz_muestra":
             nombre, voz = valor  # type: ignore[misc]
             self._cargando_muestra.discard(nombre)

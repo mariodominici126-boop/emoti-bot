@@ -119,12 +119,13 @@ Voz neuronal (opcional pero recomendada):
 
 ```bash
 mkdir -p ~/emoti-voices
-python -m piper.download_voices --data-dir ~/emoti-voices es_AR-daniela-high
+python -m piper.download_voices --data-dir ~/emoti-voices es_MX-claude-high
 ```
 
-Hacen falta los dos archivos, `es_AR-daniela-high.onnx` y
-`es_AR-daniela-high.onnx.json`: sin el `.json`, Piper no carga el modelo. Ver
-la licencia en [Voz y licencia](#voz-y-licencia).
+Hacen falta los dos archivos, `es_MX-claude-high.onnx` y
+`es_MX-claude-high.onnx.json`: sin el `.json`, Piper no carga el modelo. La
+voz `daniela` es opcional: si se elige y falta, el robot la baja a petición.
+Ver las licencias en [Voz y licencia](#voz-y-licencia).
 
 Arranque:
 
@@ -318,7 +319,7 @@ recorre las 32 combinaciones de dos opciones por eje). Si existe
 ```json
 {
   "rostro": "hybrid_balanced",
-  "voz": "daniela",
+  "voz": "claude",
   "personalidad": "estandar",
   "estilo": "estandar",
   "modelo": "conversacion"
@@ -335,7 +336,7 @@ recorre las 32 combinaciones de dos opciones por eje). Si existe
 
 Opciones publicadas:
 - `rostro`: `hybrid_balanced` (por defecto), `tele` y `capsula`;
-- `voz`: `daniela` (por defecto) y `claude`;
+- `voz`: `claude` (por defecto) y `daniela`;
 - `personalidad`: `estandar` (sin tono añadido), `amigable`, `tranquila`,
   `analitica` y `energetica`;
 - `estilo`: `estandar` (no añade nada), `formal`, `casual`, `directo` y
@@ -490,8 +491,15 @@ una lleva su propia velocidad en su archivo (`config/voces/`):
 
 | Opción | Modelo | Velocidad (`length_scale`) | Licencia de los datos |
 |---|---|---|---|
-| `daniela` (por defecto) | `es_AR-daniela-high` | 1,00 | CC BY-SA 4.0 |
-| `claude` | `es_MX-claude-high` | 0,71 | Apache-2.0 |
+| `claude` (por defecto) | `es_MX-claude-high` | 0,71 | Apache-2.0 |
+| `daniela` | `es_AR-daniela-high` | 1,00 | CC BY-SA 4.0 |
+
+**En el ejecutable de Windows** va dentro solo `claude`: su licencia
+(Apache-2.0) permite redistribuirla con su aviso. `daniela` NO va dentro: se
+baja de rhasspy/piper-voices cuando alguien la elige, con el progreso en
+pantalla y su licencia a la vista; mientras tanto, o sin conexión, suena
+`claude`. El reconocimiento de la conversación (Whisper `small`) también va
+dentro; el del despertar (`base`) se baja al encender «Hola Emoti».
 
 Las velocidades están medidas, no puestas a ojo: con las mismas cinco frases,
 claude a 1,00 tarda un 30 % más que Daniela, y a 0,71 tarda lo mismo (un

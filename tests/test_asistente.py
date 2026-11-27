@@ -341,6 +341,9 @@ class _AppSimulada:
                        mock.patch.object(mod_app.Orquestador, "estado_corto",
                                          lambda self: "simulado"),
                        mock.patch.object(mod_app.mod_voz, "crear", crear_voz),
+                       # Sin descargas de voces en las pruebas (ni intentos).
+                       mock.patch.object(mod_app.descargas, "voz_descargable",
+                                         lambda ruta: False),
                        mock.patch.object(mod_app, "Altavoz", _Altavoz),
                        mock.patch.object(mod_app, "Microfono", _Sordo),
                        mock.patch.object(mod_app.mod_stt, "crear", lambda *a: _Sordo())):
@@ -414,25 +417,25 @@ class AplicacionTest(_AppSimulada, unittest.TestCase):
         self.assertEqual(app.cara.perfil.nombre, "tele", "el rostro se ve al elegirlo")
         self._esperar_eventos(app)
         self.assertTrue(app.altavoz.dicho, "la voz dice su frase al llegar")
-        while app.asistente.actual() != "claude":
+        while app.asistente.actual() != "daniela":
             self._teclas(app, "Right")
         self._esperar_eventos(app)
-        muestra = app._muestras["claude"]
-        self.assertIn("claude", muestra.modelo)
+        muestra = app._muestras["daniela"]
+        self.assertIn("daniela", muestra.modelo)
         self._teclas(app, "Return")
         self._elegir(app, "amigable")
         self._elegir(app, "formal")
         self._esperar_eventos(app)
         self.assertIsNone(app.asistente)
-        esperado = pu.PerfilUsuario(rostro="tele", voz="claude", personalidad="amigable",
+        esperado = pu.PerfilUsuario(rostro="tele", voz="daniela", personalidad="amigable",
                                     estilo="formal")
         self.assertEqual(self.perfil.leer(), dataclasses.asdict(esperado))
         # Rostro: el de la tele y su paleta, en la misma ventana.
         self.assertEqual(app.cara.perfil.nombre, "tele")
         self.assertEqual(app.paleta, mod_perfil.cargar("tele").colores)
-        # Voz: la de claude, con su velocidad; la anterior, cerrada.
+        # Voz: la de Daniela, con su velocidad; la anterior, cerrada.
         self.assertIs(app.voz, muestra, "la voz ya cargada para la muestra, sin recargar")
-        self.assertEqual(app.config.voz.velocidad, 0.71)
+        self.assertEqual(app.config.voz.velocidad, 1.0)
         self.assertTrue(voz_inicial.cerrada)
         self.assertTrue(all(v.cerrada for v in self.voces if v is not muestra),
                         "las demás muestras se cierran")
@@ -467,13 +470,13 @@ class AplicacionTest(_AppSimulada, unittest.TestCase):
         self._teclas(app, "p", "Return")          # rostro tal cual → paso de voz
         app._muestras.clear()
         app.asistente.elegido.clear()
-        while app.asistente.actual() != "claude":
+        while app.asistente.actual() != "daniela":
             app.asistente.actuar(A.SIGUIENTE)
         app._muestras.clear()
-        self._teclas(app, "Return", "Escape")     # elige claude y sale
+        self._teclas(app, "Return", "Escape")     # elige Daniela y sale
         self._esperar_eventos(app)
-        self.assertIn("claude", app.voz.modelo)
-        self.assertEqual(self.perfil.leer()["voz"], "claude")
+        self.assertIn("daniela", app.voz.modelo)
+        self.assertEqual(self.perfil.leer()["voz"], "daniela")
         self.assertIn("Voz nueva cargada", app.detalle)
 
     def test_cambiar_con_la_aplicacion_en_marcha(self):

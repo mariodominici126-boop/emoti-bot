@@ -1,0 +1,8 @@
+Voz «claude» (es_MX, high) de Piper, de la colección rhasspy/piper-voices
+(https://huggingface.co/rhasspy/piper-voices, es/es_MX/claude/high/).
+Datos: https://huggingface.co/spaces/HirCoir/Piper-TTS-Spanish
+Licencia de los datos, según su ficha (MODEL_CARD): Apache License 2.0
+(https://www.apache.org/licenses/LICENSE-2.0).
+
+Se redistribuye sin modificar dentro de este ejecutable. La voz «daniela»
+(CC BY-SA 4.0) NO va dentro: se descarga a petición si se elige.

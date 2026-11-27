@@ -7,6 +7,11 @@
 #
 # Comprueba qué te falta en TU sistema con:
 #     python bin/comprobar_entorno.py
+#
+# Rangos, no versiones exactas, a propósito: este archivo instala desde el
+# código en cualquier plataforma (Windows, Raspberry Pi/aarch64). El bloqueo
+# exacto para CONSTRUIR el ejecutable de Windows va aparte:
+#     empaquetado/requisitos-ejecutable-windows.txt
 
 # --- Audio: micrófono y altavoz -----------------------------------------
 # En Windows y macOS es obligatorio: la rueda de pip trae PortAudio dentro.

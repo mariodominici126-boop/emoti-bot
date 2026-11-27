@@ -37,6 +37,7 @@ import io
 import time
 
 from .. import registro
+from .. import descargas
 from ..agentes_opcionales import importar_opcional
 from ..ajustes import AjustesStt
 from ..audio import senal
@@ -67,8 +68,11 @@ class WhisperLocal:
         self.pista = pista
         inicio = time.monotonic()
         try:
+            # Dentro del paquete va «small» (la conversación): se carga de su
+            # carpeta, sin red. Los demás, por nombre (caché o descarga).
+            empaquetado = descargas.whisper_empaquetado(self.modelo)
             self._modelo = modulo.WhisperModel(
-                self.modelo,
+                str(empaquetado) if empaquetado else self.modelo,
                 device="cpu",
                 compute_type=config.computo_whisper,
             )

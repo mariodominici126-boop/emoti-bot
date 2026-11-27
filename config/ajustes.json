@@ -19,8 +19,8 @@
   "voz": {
     "_voz": "motor, modelo_piper, velocidad y velocidad_espeak son valores de respaldo: manda el eje «voz» de config/perfil.json (config/voces/<nombre>.json). max_caracteres no es una preferencia y solo se cambia aquí.",
     "motor": "auto",
-    "modelo_piper": "~/emoti-voices/es_AR-daniela-high.onnx",
-    "velocidad": 1.0,
+    "modelo_piper": "~/emoti-voices/es_MX-claude-high.onnx",
+    "velocidad": 0.71,
     "velocidad_espeak": 165,
     "max_caracteres": 500
   },

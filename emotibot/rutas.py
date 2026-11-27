@@ -9,11 +9,17 @@ Separa tres cosas que antes estaban mezcladas en ~/Downloads:
 from __future__ import annotations
 
 import os
+import sys
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
+# Ejecutable de PyInstaller: RAIZ es su carpeta interna (`_internal`), que
+# puede estar en Program Files y no admitir escritura.
+CONGELADO = bool(getattr(sys, "frozen", False))
+# Lo que viaja DENTRO del paquete (voz «claude», Whisper «small»): en el
+# código fuente, `voces/` y `modelos/` del proyecto (ignoradas por git).
+RECURSOS = RAIZ
 CONFIG_REPO = RAIZ / "config"
-LOGS = RAIZ / "logs"
 
 
 def _base_config_usuario() -> Path:
@@ -46,6 +52,12 @@ def _base_estado() -> Path:
 
 CONFIG_USUARIO = _base_config_usuario()
 ESTADO = _base_estado()
+# Registros y mediciones. Desde el código fuente, logs/ del proyecto (los
+# scripts de bin/ escriben ahí). En el ejecutable, la carpeta de estado de la
+# máquina (%LOCALAPPDATA%\emotibot\logs en Windows): la del programa puede
+# no ser escribible.
+LOGS = ESTADO / "logs" if CONGELADO else RAIZ / "logs"
+VOCES_USUARIO = CONFIG_USUARIO / "voces"     # voces bajadas a petición
 
 ARCHIVO_CREDENCIALES = CONFIG_USUARIO / "credenciales.json"
 ARCHIVO_PRESUPUESTO = ESTADO / "presupuesto.json"

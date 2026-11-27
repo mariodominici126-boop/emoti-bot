@@ -69,7 +69,7 @@ class ErrorPerfilUsuario(ValueError):
 @dataclass(frozen=True)
 class PerfilUsuario:
     rostro: str = "hybrid_balanced"
-    voz: str = "daniela"
+    voz: str = "claude"
     personalidad: str = "estandar"
     estilo: str = "estandar"
     modelo: str = MODELO_BASE

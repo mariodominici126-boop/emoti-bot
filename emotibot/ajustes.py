@@ -65,7 +65,7 @@ class AjustesAudio:
 class AjustesVoz:
     motor: str = "auto"              # auto | piper | espeak | ninguno
     modelo_piper: str = "~/emoti-voices/es_MX-claude-high.onnx"
-    velocidad: float = 0.88          # <1 habla más rápido; 1.0 es lo normal
+    velocidad: float = 0.71          # la de «claude» (config/voces/claude.json)
     velocidad_espeak: int = 165
     max_caracteres: int = 500
     # Ritmo elegido en la configuración, encima de la velocidad de la voz
@@ -292,7 +292,29 @@ def cargar() -> Ajustes:
 
 
 def ruta_piper(ajustes: Ajustes) -> Path:
-    return Path(ajustes.voz.modelo_piper).expanduser()
+    """El modelo de Piper configurado y, si no está ahí, el mismo archivo en
+    las voces bajadas a petición o en las que viajan dentro del paquete. Si
+    no está en ninguna, la ruta configurada (el error dirá cuál falta)."""
+    configurada = Path(ajustes.voz.modelo_piper).expanduser()
+    for ruta in (configurada, rutas.VOCES_USUARIO / configurada.name,
+                 rutas.RECURSOS / "voces" / configurada.name):
+        if ruta.is_file():
+            return ruta
+    return configurada
+
+
+# La voz que viaja dentro del ejecutable (Apache-2.0, redistribuible). Es la
+# voz por defecto y el respaldo cuando la elegida no está.
+VOZ_EMPAQUETADA = "es_MX-claude-high.onnx"
+
+
+def ruta_piper_empaquetada() -> Path | None:
+    for ruta in (rutas.RECURSOS / "voces" / VOZ_EMPAQUETADA,
+                 rutas.VOCES_USUARIO / VOZ_EMPAQUETADA,
+                 Path("~/emoti-voices").expanduser() / VOZ_EMPAQUETADA):
+        if ruta.is_file():
+            return ruta
+    return None
 
 
 def guardar_carcasa(carcasa: bool) -> Path:

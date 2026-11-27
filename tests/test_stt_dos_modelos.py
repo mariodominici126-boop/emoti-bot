@@ -51,13 +51,43 @@ class RepartoTest(unittest.TestCase):
         from emotibot import app as mod_app
         config = mod_ajustes.cargar()
         falsa = types.SimpleNamespace(config=config)
-        with _faster_whisper():
+        with _faster_whisper(), mock.patch.object(mod_app.descargas, "whisper_en_disco",
+                                                  lambda nombre: True):
             transcriptor = mod_app.Aplicacion._transcriptor_activacion(falsa)
             transcriptor.transcribir(b"\x01\x00" * 1600, 16000)
         self.assertEqual(transcriptor.modelo, "base")
         self.assertEqual(_Modelo.creados[0].llamadas[0]["initial_prompt"],
                          whisper_local.PISTA_NOMBRE)
         self.assertEqual(transcriptor.nombre, "whisper-local", "local: el audio no sale")
+
+
+class EmpaquetadoTest(unittest.TestCase):
+    """Ejecutable (28-11-2026): «small» va dentro del paquete; «base» (solo el
+    despertar) se baja a petición en un hilo, sin bloquear la ventana."""
+
+    def test_sin_base_en_disco_no_carga_y_lo_baja(self):
+        from emotibot import app as mod_app
+        bajadas = []
+        falsa = types.SimpleNamespace(config=mod_ajustes.cargar(),
+                                      _bajar_whisper_activacion=bajadas.append)
+        with _faster_whisper(), mock.patch.object(mod_app.descargas, "whisper_en_disco",
+                                                  lambda nombre: False):
+            self.assertIsNone(mod_app.Aplicacion._transcriptor_activacion(falsa))
+        self.assertEqual(bajadas, ["base"])
+        self.assertEqual(_Modelo.creados, [], "ni intenta cargarlo (bajaría en el acto)")
+
+    def test_small_empaquetado_se_carga_de_su_carpeta(self):
+        import tempfile
+        from pathlib import Path
+        from emotibot import rutas as mod_rutas
+        with tempfile.TemporaryDirectory() as d:
+            carpeta = Path(d) / "modelos" / "whisper-small"
+            carpeta.mkdir(parents=True)
+            (carpeta / "model.bin").write_bytes(b"x")
+            with mock.patch.object(mod_rutas, "RECURSOS", Path(d)), _faster_whisper():
+                stt = mod_stt.crear(mod_ajustes.cargar())
+            self.assertEqual(_Modelo.creados[0].nombre, str(carpeta))
+            self.assertEqual(stt.modelo, "small")
 
 
 class BancoDeRegresionTest(unittest.TestCase):
